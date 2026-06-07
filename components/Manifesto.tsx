@@ -34,10 +34,6 @@ export default function Manifesto() {
   const l4 = useTransform(scrollYProgress, [0.60, 0.63, 0.72, 0.75], [0.13, 1, 1, 0.92]);
   const lineOpacities = [l0, l1, l2, l3, l4];
 
-  /* Closing paragraph fades in after all lines */
-  const postOpacity = useTransform(scrollYProgress, [0.77, 0.92], [0, 1]);
-  const postY = useTransform(scrollYProgress, [0.77, 0.92], [20, 0]);
-
   /* Background word parallax */
   const bgY = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
 

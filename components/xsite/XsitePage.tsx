@@ -2,10 +2,9 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ArrowLeft, BarChart3, AlertTriangle, CheckCircle2, Clock, TrendingDown, FileText, Bell } from "lucide-react";
+import { ArrowLeft, BarChart3, AlertTriangle, Clock, TrendingDown, FileText, Bell } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 
 const steps = [
   { n: "01", title: "Add your project", desc: "Set total budget and define sections — foundation, structure, electrical, plumbing. Takes 5 minutes." },
@@ -109,12 +108,12 @@ export default function XsitePage() {
             </div>
             <div className="p-8 md:p-12">
               <blockquote className="text-2xl md:text-3xl text-white font-medium leading-snug mb-8 max-w-3xl">
-                "A developer running a{" "}
+                &ldquo;A developer running a{" "}
                 <span className="text-red-400 font-black">₹8 Cr project</span>{" "}
                 discovers in month 7 that he&apos;s already spent{" "}
                 <span className="text-red-400 font-black">₹6.2 Cr</span>{" "}
                 — but is only{" "}
-                <span className="text-red-400 font-black">55% complete.</span>"
+                <span className="text-red-400 font-black">55% complete.</span>&rdquo;
               </blockquote>
               <p className="text-gray-400 text-base leading-relaxed max-w-2xl mb-6">
                 No one was tracking contractor invoices against milestones in real time. He now has
@@ -140,7 +139,7 @@ export default function XsitePage() {
           </h2>
         </Section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {steps.map((s, i) => (
+          {steps.map((s) => (
             <Section key={s.n}>
               <motion.div
                 whileHover={{ y: -6, borderColor: "rgba(124,58,237,0.4)" }}
@@ -164,11 +163,11 @@ export default function XsitePage() {
           <p className="text-violet-400 text-xs font-semibold tracking-[0.2em] uppercase mb-4">Features</p>
           <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
             Everything you need.
-            <br /><span className="gradient-text">Nothing you don't.</span>
+            <br /><span className="gradient-text">Nothing you don&apos;t.</span>
           </h2>
         </Section>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {features.map((f, i) => (
+          {features.map((f) => (
             <Section key={f.title}>
               <motion.div
                 whileHover={{ y: -6, borderColor: "rgba(124,58,237,0.4)", background: "rgba(124,58,237,0.05)" }}

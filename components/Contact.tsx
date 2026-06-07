@@ -17,7 +17,7 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [sent, setSent] = useState(false);
   const [fields, setFields] = useState({ name: "", email: "", message: "" });
-  const [focused, setFocused] = useState<string | null>(null);
+  const [, setFocused] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

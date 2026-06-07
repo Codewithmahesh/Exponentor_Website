@@ -126,7 +126,7 @@ export default function JemsPage() {
       <section className="px-8 py-24 max-w-[1200px] mx-auto">
         <Section>
           <div className="rounded-3xl border border-red-500/20 bg-red-500/5 p-8 md:p-12">
-            <p className="text-red-400 text-xs font-semibold uppercase tracking-wider mb-6">The gap we're closing</p>
+            <p className="text-red-400 text-xs font-semibold uppercase tracking-wider mb-6">The gap we&apos;re closing</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-bold text-white mb-4">For students</h3>

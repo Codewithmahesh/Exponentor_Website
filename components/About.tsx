@@ -77,7 +77,7 @@ export default function About() {
               <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
                 Exponentor is a focused SaaS company with a simple mandate — find problems that cost
                 people real money or real time, then build the precise fix. Not a feature. The fix.
-                We started with real estate. We're not stopping there.
+                We started with real estate. We&apos;re not stopping there.
               </p>
             </div>
 
@@ -183,8 +183,8 @@ export default function About() {
               <div className="absolute inset-0 pointer-events-none"
                 style={{ background: "radial-gradient(ellipse 50% 100% at 50% 50%, rgba(124,58,237,0.07), transparent)" }} />
               <p className="relative text-2xl md:text-3xl lg:text-4xl font-black text-white leading-snug max-w-4xl mx-auto">
-                "We don&apos;t build products for everyone.
-                <span className="gradient-text"> We build the exact thing for someone."</span>
+                &ldquo;We don&apos;t build products for everyone.
+                <span className="gradient-text"> We build the exact thing for someone.&rdquo;</span>
               </p>
             </div>
           </AnimatedBento>

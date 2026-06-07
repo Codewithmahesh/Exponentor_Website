@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { BarChart3, AlertTriangle, BookOpen, Briefcase, Star, ChevronDown } from "lucide-react";
+import { AlertTriangle, BookOpen, Briefcase, Star, ChevronDown } from "lucide-react";
 
 /* ─────────────────────────────────────────
    LAYER 0 — Intro
