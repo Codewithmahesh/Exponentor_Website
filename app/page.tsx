@@ -14,7 +14,9 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main>
+    <div className="items-center justify-between">
       <Navbar />
+    </div>
       <Hero />
       <Marquee />
       <About />
