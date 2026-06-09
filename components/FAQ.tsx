@@ -40,21 +40,22 @@ function FAQItem({
   a,
   index,
   isOpen,
-  onHover,
+  onToggle,
 }: {
   q: string;
   a: string;
   index: number;
   isOpen: boolean;
-  onHover: () => void;
+  onToggle: () => void;
 }) {
   return (
     <div
-      onMouseEnter={onHover}
-      className={`rounded-2xl transition-all duration-300 cursor-default ${
+      onMouseEnter={onToggle}
+      onClick={onToggle}
+      className={`rounded-2xl transition-all duration-300 cursor-pointer ${
         isOpen
           ? "border border-violet-500/25 bg-violet-500/[0.04]"
-          : "border border-white/6 bg-white/[0.02] hover:border-white/10 hover:bg-white/[0.035]"
+          : "border border-[var(--border)] bg-[var(--bg-card)] hover:border-violet-500/20 hover:bg-[var(--bg-2)]"
       }`}
     >
       {/* Question row */}
@@ -62,13 +63,13 @@ function FAQItem({
         <div className="flex items-start gap-4 min-w-0">
           <span
             className="text-[11px] font-mono shrink-0 w-5 mt-0.5 transition-colors duration-200"
-            style={{ color: isOpen ? "#A78BFA" : "#374151" }}
+            style={{ color: isOpen ? "#A78BFA" : "var(--fg-muted)" }}
           >
             {String(index + 1).padStart(2, "0")}
           </span>
           <span
             className={`text-sm md:text-base font-semibold leading-snug transition-colors duration-200 ${
-              isOpen ? "text-white" : "text-gray-300"
+              isOpen ? "text-[var(--fg)]" : "text-[var(--fg-muted)]"
             }`}
           >
             {q}
@@ -82,7 +83,7 @@ function FAQItem({
           <Plus
             size={16}
             className="transition-colors duration-200"
-            style={{ color: isOpen ? "#A78BFA" : "#4B5563" }}
+            style={{ color: isOpen ? "#A78BFA" : "var(--fg-muted)" }}
           />
         </motion.div>
       </div>
@@ -98,7 +99,7 @@ function FAQItem({
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <p className="pl-[3.75rem] pr-6 md:pr-8 pb-6 text-gray-500 text-sm md:text-[0.9375rem] leading-relaxed">
+            <p className="pl-[3.75rem] pr-6 md:pr-8 pb-6 text-[var(--fg-muted)] text-sm md:text-[0.9375rem] leading-relaxed">
               {a}
             </p>
           </motion.div>
@@ -141,7 +142,7 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl md:text-5xl xl:text-6xl font-black text-white leading-tight tracking-tight mb-5"
+              className="text-4xl md:text-5xl xl:text-6xl font-black text-[var(--fg)] leading-tight tracking-tight mb-5"
             >
               If you&apos;re
               <br />
@@ -152,7 +153,7 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-gray-500 leading-relaxed mb-8 text-[0.9375rem]"
+              className="text-[var(--fg-muted)] leading-relaxed mb-8 text-[0.9375rem]"
             >
               We keep it honest. No PR-speak, no corporate dodge.
               If your question isn&apos;t here, email us.
@@ -163,10 +164,10 @@ export default function FAQ() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0.25 }}
-              className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-white transition-colors duration-200 group"
+              className="inline-flex items-center gap-2 text-sm text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors duration-200 group"
             >
               hello@exponentor.com
-              <span className="text-gray-700 group-hover:text-violet-400 transition-all duration-200 group-hover:translate-x-0.5 inline-block">
+              <span className="text-gray-400 dark:text-gray-700 group-hover:text-violet-400 transition-all duration-200 group-hover:translate-x-0.5 inline-block">
                 →
               </span>
             </motion.a>
@@ -176,12 +177,12 @@ export default function FAQ() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0.4 }}
-              className="mt-10 p-5 rounded-2xl border border-white/6 bg-white/[0.02]"
+              className="mt-10 p-5 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)]"
             >
-              <p className="text-2xl font-black text-white mb-0.5">
+              <p className="text-2xl font-black text-[var(--fg)] mb-0.5">
                 {faqs.length} questions.
               </p>
-              <p className="text-gray-600 text-xs">Hover any to read the answer.</p>
+              <p className="text-[var(--fg-muted)] text-xs">Tap or hover any to read the answer.</p>
             </motion.div>
           </div>
 
@@ -199,7 +200,7 @@ export default function FAQ() {
                 a={faq.a}
                 index={i}
                 isOpen={open === i}
-                onHover={() => setOpen(i)}
+                onToggle={() => setOpen(i)}
               />
             ))}
           </motion.div>

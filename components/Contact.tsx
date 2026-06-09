@@ -25,7 +25,7 @@ export default function Contact() {
   };
 
   const inputClass =
-    "bg-[#0E0E1A] border-[#2A2A3E] text-white placeholder:text-gray-600 focus:border-violet-500/60 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-xl transition-colors duration-200 text-sm";
+    "bg-[var(--bg-input)] border-[var(--border-2)] text-[var(--fg)] placeholder:text-[var(--fg-muted)] focus:border-violet-500/60 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 rounded-xl transition-colors duration-200 text-sm";
 
   return (
     <section id="contact" ref={ref} className="py-32 px-6 relative overflow-hidden">
@@ -33,7 +33,7 @@ export default function Contact() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-violet-700/8 blur-[100px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto" ref={ref}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           {/* ── Left ── */}
           <div>
@@ -49,7 +49,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.75, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-7"
+              className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-7 text-[var(--fg)]"
             >
               Let&apos;s
               <br />
@@ -60,7 +60,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-gray-400 text-lg leading-relaxed max-w-md mb-12"
+              className="text-[var(--fg-muted)] text-lg leading-relaxed max-w-md mb-12"
             >
               Whether you&apos;re a real estate developer curious about XSITE, a student or company
               interested in JEMS, or just want to say hello — we read every message.
@@ -81,16 +81,16 @@ export default function Contact() {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.35 + i * 0.08 }}
                   whileHover={{ x: 4 }}
-                  className="group flex items-center gap-4 p-4 rounded-xl border border-[#1F1F35] bg-[#0E0E1A] hover:border-violet-500/35 transition-colors duration-300"
+                  className="group flex items-center gap-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--bg-2)] hover:border-violet-500/35 transition-colors duration-300"
                 >
                   <div className="w-9 h-9 rounded-lg bg-violet-600/15 flex items-center justify-center group-hover:bg-violet-600/25 transition-colors duration-300 shrink-0">
                     <c.icon size={16} className="text-violet-400" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[11px] text-gray-600 uppercase tracking-wider mb-0.5">{c.label}</p>
-                    <p className="text-white text-sm font-medium truncate">{c.value}</p>
+                    <p className="text-[11px] text-[var(--fg-muted)] uppercase tracking-wider mb-0.5">{c.label}</p>
+                    <p className="text-[var(--fg)] text-sm font-medium truncate">{c.value}</p>
                   </div>
-                  <ArrowRight size={14} className="text-gray-700 group-hover:text-violet-400 group-hover:translate-x-1 transition-all duration-200 shrink-0" />
+                  <ArrowRight size={14} className="text-[var(--fg-muted)] group-hover:text-violet-400 group-hover:translate-x-1 transition-all duration-200 shrink-0" />
                 </motion.a>
               ))}
             </motion.div>
@@ -105,7 +105,7 @@ export default function Contact() {
           >
             <div className="absolute -inset-1 bg-gradient-to-br from-violet-600/10 via-transparent to-purple-600/10 rounded-3xl blur-xl pointer-events-none" />
 
-            <div className="relative rounded-2xl border border-[#2A2A3E] bg-[#0B0B16] overflow-hidden">
+            <div className="relative rounded-2xl border border-[var(--border-2)] bg-[var(--bg-card)] overflow-hidden">
               {/* Top bar */}
               <div className="h-1 bg-gradient-to-r from-violet-600 via-purple-500 to-violet-800" />
 
@@ -113,7 +113,7 @@ export default function Contact() {
                 {!sent ? (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                     <div>
-                      <label className="text-[11px] text-gray-500 uppercase tracking-wider mb-2 block">
+                      <label className="text-[11px] text-[var(--fg-muted)] uppercase tracking-wider mb-2 block">
                         Your name
                       </label>
                       <Input
@@ -128,7 +128,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="text-[11px] text-gray-500 uppercase tracking-wider mb-2 block">
+                      <label className="text-[11px] text-[var(--fg-muted)] uppercase tracking-wider mb-2 block">
                         Email address
                       </label>
                       <Input
@@ -144,7 +144,7 @@ export default function Contact() {
                     </div>
 
                     <div>
-                      <label className="text-[11px] text-gray-500 uppercase tracking-wider mb-2 block">
+                      <label className="text-[11px] text-[var(--fg-muted)] uppercase tracking-wider mb-2 block">
                         What&apos;s on your mind?
                       </label>
                       <Textarea
@@ -167,7 +167,7 @@ export default function Contact() {
                       Send message <Send size={14} />
                     </motion.button>
 
-                    <p className="text-center text-[11px] text-gray-600">
+                    <p className="text-center text-[11px] text-[var(--fg-muted)]">
                       We reply within 24 hours, usually much sooner.
                     </p>
                   </form>
@@ -180,8 +180,8 @@ export default function Contact() {
                     <div className="w-14 h-14 rounded-full bg-green-500/15 flex items-center justify-center">
                       <CheckCircle2 size={28} className="text-green-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">Message sent!</h3>
-                    <p className="text-gray-500 text-sm max-w-xs">
+                    <h3 className="text-xl font-bold text-[var(--fg)]">Message sent!</h3>
+                    <p className="text-[var(--fg-muted)] text-sm max-w-xs">
                       Thanks for reaching out, {fields.name.split(" ")[0] || "there"}. We&apos;ll get back to you at {fields.email} shortly.
                     </p>
                     <button

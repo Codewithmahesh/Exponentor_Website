@@ -11,6 +11,7 @@ const sections = [
   { name: "Plumbing", pct: 60, over: false },
 ];
 
+/* MockDashboard intentionally keeps dark colours — it simulates a software UI */
 function MockDashboard() {
   return (
     <motion.div
@@ -163,7 +164,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl md:text-5xl lg:text-[3.6rem] font-black leading-[1.1] mb-5 tracking-tight"
+              className="text-4xl md:text-5xl lg:text-[3.6rem] font-black leading-[1.1] mb-5 tracking-tight text-[var(--fg)]"
             >
               Stop finding out
               <br />
@@ -174,7 +175,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-gray-400 text-[1.05rem] leading-relaxed mb-9 max-w-[400px]"
+              className="text-[var(--fg-muted)] text-[1.05rem] leading-relaxed mb-9 max-w-[400px]"
             >
               Exponentor builds focused SaaS products that give people the right
               data before a small problem becomes an expensive crisis. Real
@@ -185,7 +186,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.44 }}
-              className="flex flex-wrap gap-3 mb-12"
+              className="flex flex-wrap gap-3 mb-10"
             >
               <a
                 href="#products"
@@ -196,7 +197,7 @@ export default function Hero() {
               </a>
               <a
                 href="#about"
-                className="inline-flex items-center px-6 py-3 rounded-full border border-[#2A2A40] text-gray-400 hover:text-white hover:border-violet-500/35 font-semibold text-sm transition-all duration-200"
+                className="inline-flex items-center px-6 py-3 rounded-full border border-[var(--border-2)] text-[var(--fg-muted)] hover:text-[var(--fg)] hover:border-violet-500/35 font-semibold text-sm transition-all duration-200"
               >
                 Who we are
               </a>
@@ -207,18 +208,18 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="flex items-center gap-8"
+              className="flex flex-wrap items-center gap-6 sm:gap-8"
             >
               {[
                 { n: "2", label: "Products building" },
                 { n: "1", label: "Live & growing" },
                 { n: "0", label: "Compromises made" },
               ].map((s, i) => (
-                <div key={s.label} className="flex items-center gap-8">
-                  {i > 0 && <div className="w-px h-8 bg-[#1F1F35]" />}
+                <div key={s.label} className="flex items-center gap-6 sm:gap-8">
+                  {i > 0 && <div className="w-px h-8 bg-[var(--border)]" />}
                   <div>
-                    <div className={`text-2xl font-black ${i === 0 ? "gradient-text" : "text-white"}`}>{s.n}</div>
-                    <div className="text-[11px] text-gray-600 mt-0.5 whitespace-nowrap">{s.label}</div>
+                    <div className={`text-2xl font-black ${i === 0 ? "gradient-text" : "text-[var(--fg)]"}`}>{s.n}</div>
+                    <div className="text-[11px] text-[var(--fg-muted)] mt-0.5 whitespace-nowrap">{s.label}</div>
                   </div>
                 </div>
               ))}

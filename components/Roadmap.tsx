@@ -74,7 +74,7 @@ export default function Roadmap() {
         style={{ y }}
         className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
       >
-        <span className="text-[14vw] font-black text-white/[0.018] leading-none tracking-tighter whitespace-nowrap">
+        <span className="text-[14vw] font-black text-gray-900/[0.03] dark:text-white/[0.018] leading-none tracking-tighter whitespace-nowrap">
           ROADMAP
         </span>
       </motion.div>
@@ -103,7 +103,7 @@ export default function Roadmap() {
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tight"
+            className="text-5xl md:text-7xl font-black text-[var(--fg)] leading-tight tracking-tight"
           >
             Built in sequence.
             <br />
@@ -113,7 +113,7 @@ export default function Roadmap() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-gray-500 text-lg mt-6 max-w-xl mx-auto"
+            className="text-[var(--fg-muted)] text-lg mt-6 max-w-xl mx-auto"
           >
             We don&apos;t build roadmaps for investors. We build them for ourselves — and we&apos;re
             already ahead of schedule.
@@ -141,7 +141,7 @@ export default function Roadmap() {
 
                 {/* Phase + status */}
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-[11px] text-gray-600 font-semibold tracking-[0.2em] uppercase">{m.phase}</span>
+                  <span className="text-[11px] text-[var(--fg-muted)] font-semibold tracking-[0.2em] uppercase">{m.phase}</span>
                   <span className={`flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-full border ${sc.ring} ${sc.text}`}>
                     <span className={`w-1.5 h-1.5 rounded-full ${sc.dot}`} />
                     {sc.label}
@@ -160,8 +160,8 @@ export default function Roadmap() {
                 <p className="font-mono text-xs mb-2" style={{ color: m.color.primary }}>{m.year}</p>
 
                 {/* Title */}
-                <h3 className="text-2xl font-black text-white mb-1 leading-tight">{m.title}</h3>
-                <p className="text-gray-600 text-sm mb-7">{m.subtitle}</p>
+                <h3 className="text-2xl font-black text-[var(--fg)] mb-1 leading-tight">{m.title}</h3>
+                <p className="text-[var(--fg-muted)] text-sm mb-7">{m.subtitle}</p>
 
                 {/* Items */}
                 <ul className="space-y-3">
@@ -172,9 +172,9 @@ export default function Roadmap() {
                       ) : m.status === "building" ? (
                         <Zap size={14} className="text-amber-400 mt-0.5 shrink-0" />
                       ) : (
-                        <Circle size={14} className="text-gray-700 mt-0.5 shrink-0" />
+                        <Circle size={14} className="text-gray-400 dark:text-gray-700 mt-0.5 shrink-0" />
                       )}
-                      <span className={`text-sm leading-snug ${m.status === "live" ? "text-gray-400" : m.status === "building" ? "text-gray-500" : "text-gray-700"}`}>
+                      <span className={`text-sm leading-snug ${m.status === "live" ? "text-[var(--fg-muted)]" : m.status === "building" ? "text-[var(--fg-muted)]" : "text-gray-400 dark:text-gray-700"}`}>
                         {item}
                       </span>
                     </li>
@@ -196,8 +196,8 @@ export default function Roadmap() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-px border border-white/6 rounded-2xl overflow-hidden"
-          style={{ background: "rgba(255,255,255,0.03)" }}
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-px rounded-2xl overflow-hidden border border-[var(--border)]"
+          style={{ background: "var(--bg-deep)" }}
         >
           {[
             { label: "We pick ONE problem at a time.", sub: "Not twelve. One. And we solve it properly." },
@@ -206,10 +206,10 @@ export default function Roadmap() {
           ].map((item, i) => (
             <div
               key={i}
-              className="px-8 py-7 border-r border-white/6 last:border-r-0 hover:bg-white/2 transition-colors duration-300"
+              className="px-8 py-7 border-r border-[var(--border)] last:border-r-0 bg-[var(--bg-deep)] hover:bg-[var(--bg-2)] transition-colors duration-300"
             >
-              <p className="text-white font-semibold mb-1.5 text-sm leading-snug">{item.label}</p>
-              <p className="text-gray-600 text-xs leading-relaxed">{item.sub}</p>
+              <p className="text-[var(--fg)] font-semibold mb-1.5 text-sm leading-snug">{item.label}</p>
+              <p className="text-[var(--fg-muted)] text-xs leading-relaxed">{item.sub}</p>
             </div>
           ))}
         </motion.div>

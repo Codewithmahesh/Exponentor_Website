@@ -1,8 +1,9 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { AlertTriangle, BookOpen, Briefcase, Star, ChevronDown } from "lucide-react";
+import { AlertTriangle, BookOpen, Briefcase, Star, ChevronDown, ArrowRight } from "lucide-react";
 
 /* ─────────────────────────────────────────
    LAYER 0 — Intro
@@ -11,7 +12,7 @@ function IntroLayer() {
   return (
     <div
       className="h-full flex flex-col items-center justify-center overflow-hidden"
-      style={{ background: "radial-gradient(ellipse 80% 60% at 50% 40%, #120D24 0%, #07070F 70%)" }}
+      style={{ background: "radial-gradient(ellipse 80% 60% at 50% 40%, var(--grad-violet) 0%, var(--bg) 70%)" }}
     >
       <div
         className="absolute inset-0 opacity-[0.025] pointer-events-none"
@@ -28,12 +29,12 @@ function IntroLayer() {
         <p className="text-violet-400 text-xs font-semibold tracking-[0.25em] uppercase mb-7">
           What we&apos;re building
         </p>
-        <h2 className="text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-none tracking-tight mb-7">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-black text-[var(--fg)] leading-none tracking-tight mb-7">
           Two industries.
           <br />
           <span className="gradient-text">Solved differently.</span>
         </h2>
-        <p className="text-gray-500 text-lg md:text-xl max-w-lg mx-auto mb-12 leading-relaxed">
+        <p className="text-[var(--fg-muted)] text-base md:text-xl max-w-lg mx-auto mb-12 leading-relaxed">
           Each product is a precise fix for a specific, expensive problem. No bloat. No vague promises.
         </p>
         <div className="flex flex-wrap gap-3 justify-center mb-14">
@@ -46,7 +47,14 @@ function IntroLayer() {
             JEMS — Education
           </div>
         </div>
-        <div className="flex flex-col items-center gap-1.5 text-gray-600 text-xs tracking-widest uppercase">
+        <Link
+          href="/journey"
+          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-violet-500/30 bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 hover:text-violet-200 text-sm font-semibold transition-all duration-200 group mb-12"
+        >
+          See how we got here
+          <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-200" />
+        </Link>
+        <div className="flex flex-col items-center gap-1.5 text-[var(--fg-muted)] text-xs tracking-widest uppercase">
           <span>Scroll to explore</span>
           <ChevronDown size={14} className="animate-bounce mt-0.5" />
         </div>
@@ -62,11 +70,11 @@ function XsiteLayer() {
   return (
     <div
       className="h-full flex items-center overflow-hidden relative"
-      style={{ background: "radial-gradient(ellipse 80% 65% at 65% 35%, #1C0F3E 0%, #0D0B1C 55%, #07070F 100%)" }}
+      style={{ background: "radial-gradient(ellipse 80% 65% at 65% 35%, var(--grad-violet) 0%, var(--grad-violet-2) 55%, var(--bg) 100%)" }}
     >
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-violet-700/12 blur-[140px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-purple-900/12 blur-[100px] pointer-events-none" />
-      <div className="absolute top-5 left-1/2 -translate-x-1/2 w-10 h-1 rounded-full bg-white/10" />
+      <div className="absolute top-5 left-1/2 -translate-x-1/2 w-10 h-1 rounded-full bg-[var(--border)]" />
 
       <div className="max-w-7xl mx-auto w-full px-8 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div>
@@ -75,7 +83,7 @@ function XsiteLayer() {
             Live Product
           </div>
           <h2
-            className="text-7xl md:text-8xl font-black tracking-tight mb-2"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-2"
             style={{
               background: "linear-gradient(135deg, #fff 40%, #A78BFA)",
               WebkitBackgroundClip: "text",
@@ -85,8 +93,8 @@ function XsiteLayer() {
           >
             XSITE
           </h2>
-          <p className="text-violet-400 text-lg font-semibold mb-6">Real Estate Cost Intelligence</p>
-          <p className="text-gray-400 leading-relaxed mb-8 max-w-md text-[0.95rem]">
+          <p className="text-violet-400 text-base md:text-lg font-semibold mb-6">Real Estate Cost Intelligence</p>
+          <p className="text-[var(--fg-muted)] leading-relaxed mb-8 max-w-md text-[0.95rem]">
             Developers were discovering budget disasters in month 7 of a 12-month project — when it&apos;s
             already too late to fix. XSITE tracks every rupee against every milestone in real time, so you
             catch problems in month 2.
@@ -98,7 +106,7 @@ function XsiteLayer() {
               "Automated section-level expenditure reports",
               "Early alerts before overruns become irreversible",
             ].map((f) => (
-              <li key={f} className="flex items-start gap-3 text-gray-300 text-sm">
+              <li key={f} className="flex items-start gap-3 text-[var(--fg-muted)] text-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-violet-400 mt-1.5 shrink-0" />
                 {f}
               </li>
@@ -181,11 +189,11 @@ function JemsLayer() {
   return (
     <div
       className="h-full flex items-center overflow-hidden relative"
-      style={{ background: "radial-gradient(ellipse 70% 60% at 30% 40%, #201408 0%, #0F0B07 70%)" }}
+      style={{ background: "radial-gradient(ellipse 70% 60% at 30% 40%, var(--grad-amber) 0%, var(--bg) 70%)" }}
     >
       <div className="absolute top-0 left-0 w-[700px] h-[700px] rounded-full bg-amber-700/8 blur-[160px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-orange-900/10 blur-[100px] pointer-events-none" />
-      <div className="absolute top-5 left-1/2 -translate-x-1/2 w-10 h-1 rounded-full bg-white/10" />
+      <div className="absolute top-5 left-1/2 -translate-x-1/2 w-10 h-1 rounded-full bg-[var(--border)]" />
 
       <div className="max-w-7xl mx-auto w-full px-8 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div>
@@ -194,7 +202,7 @@ function JemsLayer() {
             In Development
           </div>
           <h2
-            className="text-7xl md:text-8xl font-black tracking-tight mb-2"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-2"
             style={{
               background: "linear-gradient(135deg, #fff 40%, #FCD34D)",
               WebkitBackgroundClip: "text",
@@ -204,9 +212,9 @@ function JemsLayer() {
           >
             JEMS
           </h2>
-          <p className="text-amber-400 text-lg font-semibold mb-1">Student × Industry Trust Platform</p>
-          <p className="text-amber-800 text-sm italic mb-6">JEMS means trust — and that&apos;s what we&apos;re building.</p>
-          <p className="text-gray-400 leading-relaxed mb-8 max-w-md text-[0.95rem]">
+          <p className="text-amber-400 text-base md:text-lg font-semibold mb-1">Student × Industry Trust Platform</p>
+          <p className="text-amber-600 dark:text-amber-800 text-sm italic mb-6">JEMS means trust — and that&apos;s what we&apos;re building.</p>
+          <p className="text-[var(--fg-muted)] leading-relaxed mb-8 max-w-md text-[0.95rem]">
             Students graduate without knowing what industry actually needs. Companies burn months and
             lakhs on mismatched hires. JEMS is the trust layer — readying students for real expectations,
             giving companies talent they can count on.
@@ -218,8 +226,8 @@ function JemsLayer() {
             ].map((c) => (
               <div key={c.title} className="p-4 rounded-2xl border border-amber-500/15 bg-amber-500/5 hover:border-amber-500/30 transition-colors duration-300">
                 <c.icon size={16} className="text-amber-400 mb-2.5" />
-                <p className="font-semibold text-white text-sm mb-1">{c.title}</p>
-                <p className="text-gray-600 text-xs leading-relaxed">{c.desc}</p>
+                <p className="font-semibold text-[var(--fg)] text-sm mb-1">{c.title}</p>
+                <p className="text-[var(--fg-muted)] text-xs leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -301,13 +309,6 @@ function JemsLayer() {
 
 /* ─────────────────────────────────────────
    MAIN — Sticky layer container
-
-   Y values use % of element height (element = absolute inset-0 = 100vh).
-   "100%" = fully off-screen below.
-   "6%"   = ~60px peek gap at top, showing layer beneath.
-   "0%"   = fully covering the viewport.
-
-   No useSpring — direct scroll linking keeps it responsive.
 ───────────────────────────────────────── */
 export default function Products() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -315,11 +316,9 @@ export default function Products() {
     target: containerRef,
     offset: ["start start", "end end"],
   });
-  // Intro recedes as XSITE arrives
   const introScale = useTransform(scrollYProgress, [0.18, 0.46], [1, 0.86]);
   const introOpacity = useTransform(scrollYProgress, [0.18, 0.46], [1, 0.15]);
 
-  // XSITE: slides up → rests at 6% peek → flattens to 0% as JEMS comes
   const xsiteY = useTransform(
     scrollYProgress,
     [0.18, 0.46, 0.54, 0.82],
@@ -327,7 +326,6 @@ export default function Products() {
   );
   const xsiteOpacity = useTransform(scrollYProgress, [0.54, 0.82], [1, 0.25]);
 
-  // JEMS: slides up → rests at 6% peek (XSITE at 0% behind it shows through)
   const jemsY = useTransform(scrollYProgress, [0.54, 0.82], ["100%", "6%"]);
 
   return (
@@ -342,10 +340,7 @@ export default function Products() {
           <IntroLayer />
         </motion.div>
 
-        {/* Layer 1 — XSITE
-            inset-0 means the element fills 100vh.
-            y="100%" → translateY(100vh): fully below.
-            y="6%"   → translateY(~60px): 60px gap at top reveals intro. */}
+        {/* Layer 1 — XSITE */}
         <motion.div
           style={{ y: xsiteY, opacity: xsiteOpacity, boxShadow: "0 -20px 80px rgba(0,0,0,0.7)" }}
           className="absolute inset-0 rounded-t-[2rem] overflow-hidden will-change-transform"
@@ -353,9 +348,7 @@ export default function Products() {
           <XsiteLayer />
         </motion.div>
 
-        {/* Layer 2 — JEMS
-            XSITE is at y=0% (full screen) when JEMS arrives.
-            JEMS rests at y=6%, revealing 60px of XSITE above it. */}
+        {/* Layer 2 — JEMS */}
         <motion.div
           style={{ y: jemsY, boxShadow: "0 -20px 80px rgba(0,0,0,0.7)" }}
           className="absolute inset-0 rounded-t-[2rem] overflow-hidden will-change-transform"

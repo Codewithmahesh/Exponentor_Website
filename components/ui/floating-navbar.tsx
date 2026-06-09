@@ -51,7 +51,12 @@ export const FloatingNav = ({
           className
         )}
       >
-        <div className="relative flex items-center justify-between px-3 py-2 rounded-full border border-white/[0.08] bg-[#09090F]/85 backdrop-blur-2xl shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_20px_60px_rgba(0,0,0,0.6)]">
+        <div className="relative flex items-center justify-between px-3 py-2 rounded-full
+          border border-gray-200 dark:border-white/[0.08]
+          bg-white/85 dark:bg-[#09090F]/85
+          backdrop-blur-2xl
+          shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_8px_32px_rgba(0,0,0,0.08)]
+          dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_20px_60px_rgba(0,0,0,0.6)]">
           {/* top glow line */}
           <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 -translate-y-px w-64 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
 
@@ -64,7 +69,10 @@ export const FloatingNav = ({
               <a
                 key={idx}
                 href={item.link}
-                className="group relative px-3.5 py-1.5 rounded-full text-sm text-gray-400 hover:text-white transition-colors duration-200 "
+                className="group relative px-3.5 py-1.5 rounded-full text-sm
+                  text-gray-600 dark:text-gray-400
+                  hover:text-gray-900 dark:hover:text-white
+                  transition-colors duration-200"
               >
                 {item.icon && <span className="block sm:hidden">{item.icon}</span>}
                 <span className="hidden sm:block relative">

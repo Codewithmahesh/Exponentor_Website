@@ -40,18 +40,18 @@ export default function JemsPage() {
   const [joined, setJoined] = useState(false);
 
   return (
-    <main className="min-h-screen" style={{ background: "radial-gradient(ellipse 80% 40% at 50% 0%, #201408 0%, #07070F 60%)" }}>
+    <main className="min-h-screen" style={{ background: "radial-gradient(ellipse 80% 40% at 50% 0%, var(--grad-amber) 0%, var(--bg) 60%)" }}>
 
       {/* Back nav */}
       <div className="px-8 pt-8 max-w-[1200px] mx-auto">
-        <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-amber-400 text-sm transition-colors duration-200 group">
+        <Link href="/" className="inline-flex items-center gap-2 text-[var(--fg-muted)] hover:text-amber-400 text-sm transition-colors duration-200 group">
           <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform duration-200" />
           Back to Exponentor
         </Link>
       </div>
 
       {/* Hero */}
-      <section className="px-8 pt-20 pb-28 max-w-[1200px] mx-auto text-center">
+      <section className="px-5 sm:px-8 pt-16 sm:pt-20 pb-20 sm:pb-28 max-w-[1200px] mx-auto text-center">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
           <Badge className="mb-6 border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs font-semibold px-3 py-1">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse mr-2 inline-block" />
@@ -63,7 +63,7 @@ export default function JemsPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-7xl md:text-9xl font-black tracking-tight mb-4"
+          className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight mb-4"
           style={{ background: "linear-gradient(135deg, #fff 40%, #FCD34D)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}
         >
           JEMS
@@ -75,12 +75,12 @@ export default function JemsPage() {
         </motion.p>
 
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.32 }}
-          className="text-amber-700 text-base italic mb-8">
+          className="text-amber-600 dark:text-amber-700 text-base italic mb-8">
           JEMS means trust.
         </motion.p>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.38 }}
-          className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed mb-12">
+          className="text-[var(--fg-muted)] text-lg max-w-xl mx-auto leading-relaxed mb-12">
           Bridging the gap between students and the industry that needs them. Better readiness.
           Smarter hiring. Lower cost on both sides.
         </motion.p>
@@ -100,7 +100,7 @@ export default function JemsPage() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
-              className="bg-[#1A1208]/80 border-amber-500/25 text-white placeholder:text-gray-600 focus:border-amber-500/60 focus-visible:ring-0 rounded-xl text-sm"
+              className="bg-[var(--bg-input)] border-amber-500/25 text-[var(--fg)] placeholder:text-[var(--fg-muted)] focus:border-amber-500/60 focus-visible:ring-0 rounded-xl text-sm"
             />
             <motion.button
               type="submit"
@@ -116,8 +116,8 @@ export default function JemsPage() {
             <div className="w-12 h-12 rounded-full bg-amber-500/15 flex items-center justify-center">
               <CheckCircle2 size={24} className="text-amber-400" />
             </div>
-            <p className="text-white font-semibold">You&apos;re on the list!</p>
-            <p className="text-gray-500 text-sm">We&apos;ll reach out to {email} when JEMS launches.</p>
+            <p className="text-[var(--fg)] font-semibold">You&apos;re on the list!</p>
+            <p className="text-[var(--fg-muted)] text-sm">We&apos;ll reach out to {email} when JEMS launches.</p>
           </motion.div>
         )}
       </section>
@@ -129,16 +129,16 @@ export default function JemsPage() {
             <p className="text-red-400 text-xs font-semibold uppercase tracking-wider mb-6">The gap we&apos;re closing</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-bold text-white mb-4">For students</h3>
-                <div className="space-y-3 text-gray-500 text-sm">
+                <h3 className="text-xl font-bold text-[var(--fg)] mb-4">For students</h3>
+                <div className="space-y-3 text-[var(--fg-muted)] text-sm">
                   <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Graduate without knowing industry benchmarks</div>
                   <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>No credible way to prove job readiness</div>
                   <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Interviews feel like a guessing game</div>
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-4">For companies</h3>
-                <div className="space-y-3 text-gray-500 text-sm">
+                <h3 className="text-xl font-bold text-[var(--fg)] mb-4">For companies</h3>
+                <div className="space-y-3 text-[var(--fg-muted)] text-sm">
                   <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Spend months and lakhs on hires that don&apos;t stick</div>
                   <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Resumes lie — no reliable signal of actual readiness</div>
                   <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Hiring process is slow, expensive, and often wrong</div>
@@ -153,7 +153,7 @@ export default function JemsPage() {
       <section className="px-8 py-16 max-w-[1200px] mx-auto">
         <Section className="mb-12">
           <p className="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">For Students</p>
-          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-[var(--fg)] tracking-tight">
             Know exactly where you stand.
           </h2>
         </Section>
@@ -161,12 +161,12 @@ export default function JemsPage() {
           {forStudents.map(f => (
             <Section key={f.title}>
               <motion.div whileHover={{ y: -6, borderColor: "rgba(245,158,11,0.35)" }} transition={{ duration: 0.3 }}
-                className="h-full p-6 rounded-2xl border border-[#1F1F35] bg-[#0D0A07]">
+                className="h-full p-6 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)]">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center mb-4">
                   <f.icon size={18} className="text-amber-400" />
                 </div>
-                <h3 className="font-bold text-white mb-2 text-sm">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="font-bold text-[var(--fg)] mb-2 text-sm">{f.title}</h3>
+                <p className="text-[var(--fg-muted)] text-sm leading-relaxed">{f.desc}</p>
               </motion.div>
             </Section>
           ))}
@@ -177,7 +177,7 @@ export default function JemsPage() {
       <section className="px-8 py-16 max-w-[1200px] mx-auto">
         <Section className="mb-12">
           <p className="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">For Companies</p>
-          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-[var(--fg)] tracking-tight">
             Hire right. The first time.
           </h2>
         </Section>
@@ -185,12 +185,12 @@ export default function JemsPage() {
           {forCompanies.map(f => (
             <Section key={f.title}>
               <motion.div whileHover={{ y: -6, borderColor: "rgba(245,158,11,0.35)" }} transition={{ duration: 0.3 }}
-                className="h-full p-6 rounded-2xl border border-[#1F1F35] bg-[#0D0A07]">
+                className="h-full p-6 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)]">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center mb-4">
                   <f.icon size={18} className="text-amber-400" />
                 </div>
-                <h3 className="font-bold text-white mb-2 text-sm">{f.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                <h3 className="font-bold text-[var(--fg)] mb-2 text-sm">{f.title}</h3>
+                <p className="text-[var(--fg-muted)] text-sm leading-relaxed">{f.desc}</p>
               </motion.div>
             </Section>
           ))}
@@ -200,12 +200,12 @@ export default function JemsPage() {
       {/* CTA */}
       <section className="px-8 py-24 max-w-[1200px] mx-auto">
         <Section>
-          <div className="rounded-3xl border border-amber-500/20 p-12 md:p-16 text-center relative overflow-hidden"
-            style={{ background: "radial-gradient(ellipse 80% 80% at 50% 0%, rgba(245,158,11,0.08), transparent)" }}>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
+          <div className="rounded-3xl border border-amber-500/20 bg-[var(--bg-card)] p-12 md:p-16 text-center relative overflow-hidden">
+            <div className="absolute inset-0 rounded-3xl" style={{ background: "radial-gradient(ellipse 80% 80% at 50% 0%, rgba(245,158,11,0.08), transparent)" }} />
+            <h2 className="text-4xl md:text-5xl font-black text-[var(--fg)] mb-4 tracking-tight">
               Be first to know.
             </h2>
-            <p className="text-gray-400 text-lg max-w-md mx-auto mb-8">
+            <p className="text-[var(--fg-muted)] text-lg max-w-md mx-auto mb-8">
               JEMS is in development. Join the waitlist and help shape the product.
             </p>
             {!joined ? (
@@ -213,7 +213,7 @@ export default function JemsPage() {
                 className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto">
                 <Input type="email" placeholder="your@email.com" value={email}
                   onChange={e => setEmail(e.target.value)} required
-                  className="bg-[#1A1208]/80 border-amber-500/25 text-white placeholder:text-gray-600 focus-visible:ring-0 rounded-xl text-sm" />
+                  className="bg-[var(--bg-input)] border-amber-500/25 text-[var(--fg)] placeholder:text-[var(--fg-muted)] focus-visible:ring-0 rounded-xl text-sm" />
                 <button type="submit"
                   className="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-semibold text-sm whitespace-nowrap transition-colors duration-200">
                   Join →

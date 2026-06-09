@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { FloatingNav } from "@/components/ui/floating-navbar";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { name: "About", link: "/#about" },
@@ -15,7 +16,7 @@ const navItems = [
 
 const Logo = () => (
   <Link href="/" className="flex items-center gap-2 pl-1 group">
-    <span className="font-bold text-sm text-white/90 group-hover:text-white transition-colors duration-200 hidden sm:block">
+    <span className="font-bold text-sm text-[var(--fg)] opacity-90 group-hover:opacity-100 transition-opacity duration-200 hidden sm:block">
       Exponentor
     </span>
   </Link>
@@ -26,11 +27,13 @@ export default function Navbar() {
 
   const Cta = (
     <>
+      <ThemeToggle />
+
       <Link href="/#contact">
         <motion.span
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="block px-4 py-1.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold cursor-pointer 
+          className="block px-4 py-1.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold cursor-pointer
           transition-colors duration-200 shadow-md shadow-violet-600/30 hover:shadow-violet-500/40"
         >
           Let&apos;s talk
@@ -58,16 +61,16 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.97 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[72px] left-1/2 -translate-x-1/2 z-[9998] w-[calc(100%-2rem)] max-w-3xl rounded-2xl bg-[#0E0E1A]/95
-             backdrop-blur-2xl border border-white/[0.08] overflow-hidden shadow-2xl"
+            className="fixed top-[72px] left-1/2 -translate-x-1/2 z-[9998] w-[calc(100%-2rem)] max-w-3xl rounded-2xl
+             bg-[var(--bg-card)] backdrop-blur-2xl border border-[var(--border)] overflow-hidden shadow-2xl"
           >
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.link}
                 onClick={() => setOpen(false)}
-                className="flex items-center px-5 py-3.5 text-gray-300 hover:text-white hover:bg-white/[0.04] transition-colors
-                 duration-150 text-sm border-b border-white/[0.05] last:border-0"
+                className="flex items-center px-5 py-3.5 text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--bg-deep)] transition-colors
+                 duration-150 text-sm border-b border-[var(--border)] last:border-0"
               >
                 {item.name}
               </Link>

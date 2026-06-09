@@ -43,9 +43,9 @@ export default function Stats() {
 
   return (
     <section ref={ref} className="py-0 relative overflow-hidden">
-      <div className="border-y border-[#1A1A2E]"
+      <div className="border-y border-[var(--border-subtle)]"
         style={{ background: "radial-gradient(ellipse 80% 100% at 50% 50%, rgba(124,58,237,0.04), transparent)" }}>
-        <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1A1A2E]">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-[var(--border-subtle)]">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -57,7 +57,7 @@ export default function Stats() {
               <div className="text-4xl md:text-5xl lg:text-6xl font-black gradient-text mb-3 leading-none">
                 <Counter to={s.value} prefix={s.prefix} suffix={s.suffix} inView={inView} />
               </div>
-              <p className="text-gray-600 text-xs leading-relaxed whitespace-pre-line uppercase tracking-wider">
+              <p className="text-[var(--fg-muted)] text-xs leading-relaxed whitespace-pre-line uppercase tracking-wider">
                 {s.label}
               </p>
             </motion.div>

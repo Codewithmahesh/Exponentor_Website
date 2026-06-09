@@ -39,7 +39,7 @@ export default function About() {
         style={{ background: "radial-gradient(ellipse 60% 50% at 30% 40%, rgba(124,58,237,0.05) 0%, transparent 70%)" }} />
 
       {/* Faded giant label */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[22vw] font-black text-white/[0.018] select-none pointer-events-none leading-none tracking-tight whitespace-nowrap">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[22vw] font-black text-gray-900/[0.03] dark:text-white/[0.018] select-none pointer-events-none leading-none tracking-tight whitespace-nowrap">
         ABOUT
       </div>
 
@@ -61,20 +61,20 @@ export default function About() {
           <AnimatedBento
             delay={0}
             inView={inView}
-            className="lg:col-span-8 lg:row-span-2 relative overflow-hidden rounded-3xl border border-[#1F1F35] bg-[#0C0C1A] p-10 md:p-14 flex flex-col justify-between min-h-[420px]"
+            className="lg:col-span-8 lg:row-span-2 relative overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--bg-card)] p-7 md:p-10 lg:p-14 flex flex-col justify-between min-h-[380px] lg:min-h-[420px]"
           >
             {/* Background gradient */}
             <div className="absolute inset-0 pointer-events-none"
               style={{ background: "radial-gradient(ellipse 80% 70% at 20% 30%, rgba(124,58,237,0.08) 0%, transparent 65%)" }} />
 
             <div className="relative z-10">
-              <p className="text-xs text-gray-600 uppercase tracking-widest mb-6 font-medium">Exponentor · Est. 2024</p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight text-white mb-6">
+              <p className="text-xs text-[var(--fg-muted)] uppercase tracking-widest mb-6 font-medium">Exponentor · Est. 2024</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight text-[var(--fg)] mb-6">
                 We build the thing
                 <br />
                 <span className="gradient-text">you wish existed.</span>
               </h2>
-              <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
+              <p className="text-[var(--fg-muted)] text-base md:text-lg leading-relaxed max-w-lg">
                 Exponentor is a focused SaaS company with a simple mandate — find problems that cost
                 people real money or real time, then build the precise fix. Not a feature. The fix.
                 We started with real estate. We&apos;re not stopping there.
@@ -100,10 +100,10 @@ export default function About() {
           <AnimatedBento
             delay={0.1}
             inView={inView}
-            className="lg:col-span-4 rounded-3xl border border-[#1F1F35] bg-[#0C0C1A] overflow-hidden"
+            className="lg:col-span-4 rounded-3xl border border-[var(--border)] bg-[var(--bg-card)] overflow-hidden"
           >
             <div className="p-8 h-full flex flex-col justify-between">
-              <p className="text-xs text-gray-600 uppercase tracking-widest font-medium">By the numbers</p>
+              <p className="text-xs text-[var(--fg-muted)] uppercase tracking-widest font-medium">By the numbers</p>
               <div className="grid grid-cols-2 gap-6 mt-6">
                 {[
                   { v: "2", l: "Products" },
@@ -118,7 +118,7 @@ export default function About() {
                     transition={{ duration: 0.5, delay: 0.2 + i * 0.07 }}
                   >
                     <div className="text-3xl md:text-4xl font-black gradient-text mb-1">{s.v}</div>
-                    <div className="text-xs text-gray-600 uppercase tracking-wider">{s.l}</div>
+                    <div className="text-xs text-[var(--fg-muted)] uppercase tracking-wider">{s.l}</div>
                   </motion.div>
                 ))}
               </div>
@@ -129,10 +129,10 @@ export default function About() {
           <AnimatedBento
             delay={0.15}
             inView={inView}
-            className="lg:col-span-4 rounded-3xl border border-[#1F1F35] bg-gradient-to-br from-[#0C0C1A] to-[#10091F] overflow-hidden"
+            className="lg:col-span-4 rounded-3xl border border-[var(--border)] bg-[var(--bg-card)] overflow-hidden"
           >
             <div className="p-8 h-full">
-              <p className="text-xs text-gray-600 uppercase tracking-widest font-medium mb-4">Company DNA</p>
+              <p className="text-xs text-[var(--fg-muted)] uppercase tracking-widest font-medium mb-4">Company DNA</p>
               <div className="space-y-3">
                 {["Focused", "Fast", "Precise", "Relentless"].map((tag, i) => (
                   <motion.div
@@ -143,8 +143,8 @@ export default function About() {
                     className="flex items-center gap-3"
                   >
                     <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-violet-500 to-purple-500" />
-                    <span className="text-gray-300 font-semibold text-sm">{tag}</span>
-                    <div className="flex-1 h-px bg-[#1F1F35]" />
+                    <span className="text-[var(--fg)] font-semibold text-sm">{tag}</span>
+                    <div className="flex-1 h-px bg-[var(--border)]" />
                   </motion.div>
                 ))}
               </div>
@@ -162,12 +162,12 @@ export default function About() {
               <motion.div
                 whileHover={{ y: -6, borderColor: "rgba(124,58,237,0.4)" }}
                 transition={{ duration: 0.3 }}
-                className="h-full p-7 rounded-3xl border border-[#1F1F35] bg-[#0C0C1A] flex flex-col gap-4 cursor-default"
+                className="h-full p-7 rounded-3xl border border-[var(--border)] bg-[var(--bg-card)] flex flex-col gap-4 cursor-default"
               >
                 <span className="text-3xl font-black text-violet-500/20 font-mono leading-none">{b.n}</span>
                 <div>
-                  <h3 className="font-bold text-white text-sm mb-2">{b.title}</h3>
-                  <p className="text-gray-500 text-xs leading-relaxed">{b.body}</p>
+                  <h3 className="font-bold text-[var(--fg)] text-sm mb-2">{b.title}</h3>
+                  <p className="text-[var(--fg-muted)] text-xs leading-relaxed">{b.body}</p>
                 </div>
               </motion.div>
             </AnimatedBento>
@@ -179,10 +179,10 @@ export default function About() {
             inView={inView}
             className="lg:col-span-12"
           >
-            <div className="relative overflow-hidden rounded-3xl border border-violet-500/15 bg-gradient-to-r from-[#0E0B1E] via-[#120D28] to-[#0E0B1E] p-10 md:p-14 text-center">
+            <div className="relative overflow-hidden rounded-3xl border border-violet-500/15 bg-[var(--bg-card)] p-10 md:p-14 text-center">
               <div className="absolute inset-0 pointer-events-none"
                 style={{ background: "radial-gradient(ellipse 50% 100% at 50% 50%, rgba(124,58,237,0.07), transparent)" }} />
-              <p className="relative text-2xl md:text-3xl lg:text-4xl font-black text-white leading-snug max-w-4xl mx-auto">
+              <p className="relative text-2xl md:text-3xl lg:text-4xl font-black text-[var(--fg)] leading-snug max-w-4xl mx-auto">
                 &ldquo;We don&apos;t build products for everyone.
                 <span className="gradient-text"> We build the exact thing for someone.&rdquo;</span>
               </p>

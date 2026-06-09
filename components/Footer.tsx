@@ -30,7 +30,7 @@ const cols = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-[#1A1A2E] overflow-hidden">
+    <footer className="relative border-t border-[var(--border-subtle)] overflow-hidden">
       {/* Top gradient */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-violet-500/30 to-transparent" />
 
@@ -43,9 +43,9 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-purple-700 flex items-center justify-center shadow-lg shadow-violet-500/20">
                 <span className="text-white font-black text-sm">EX</span>
               </div>
-              <span className="font-bold text-white text-lg tracking-tight">Exponentor</span>
+              <span className="font-bold text-[var(--fg)] text-lg tracking-tight">Exponentor</span>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+            <p className="text-[var(--fg-muted)] text-sm leading-relaxed max-w-xs">
               Building focused SaaS products for real-world problems. Starting with real estate.
               Not stopping there.
             </p>
@@ -54,7 +54,7 @@ export default function Footer() {
           {/* Link columns */}
           {cols.map((col) => (
             <div key={col.heading}>
-              <p className="text-[11px] text-gray-600 uppercase tracking-[0.18em] font-semibold mb-5">
+              <p className="text-[11px] text-[var(--fg-muted)] uppercase tracking-[0.18em] font-semibold mb-5">
                 {col.heading}
               </p>
               <ul className="space-y-3">
@@ -62,7 +62,7 @@ export default function Footer() {
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      className="group flex items-center gap-2 text-sm text-gray-500 hover:text-white transition-colors duration-200"
+                      className="group flex items-center gap-2 text-sm text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors duration-200"
                     >
                       {l.label}
                       {"badge" in l && l.badge && (
@@ -84,11 +84,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-[#1A1A2E] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-700 text-sm">
+        <div className="border-t border-[var(--border-subtle)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[var(--fg-muted)] text-sm">
             © 2024–{new Date().getFullYear()} Exponentor. All rights reserved.
           </p>
-          <p className="text-gray-700 text-xs">
+          <p className="text-[var(--fg-muted)] text-xs">
             Building things that matter.
           </p>
         </div>

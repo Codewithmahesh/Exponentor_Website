@@ -61,30 +61,30 @@ function IncidentCard({ incident, index }: { incident: typeof incidents[0]; inde
           initial={{ scale: 0 }}
           animate={inView ? { scale: 1 } : {}}
           transition={{ delay: 0.2, duration: 0.4, ease: "backOut" }}
-          className="w-10 h-10 rounded-xl bg-[#0E0E1A] border border-white/10 flex items-center justify-center group-hover:border-violet-500/30 transition-colors duration-300"
+          className="w-10 h-10 rounded-xl bg-[var(--bg-2)] border border-[var(--border)] flex items-center justify-center group-hover:border-violet-500/30 transition-colors duration-300"
         >
           <incident.icon size={16} className={incident.color} />
         </motion.div>
         {index < incidents.length - 1 && (
-          <div className="w-px flex-1 min-h-[3rem] mt-2 bg-gradient-to-b from-white/8 to-transparent" />
+          <div className="w-px flex-1 min-h-[3rem] mt-2 bg-gradient-to-b from-[var(--border)] to-transparent" />
         )}
       </div>
 
       {/* Card */}
       <div className="flex-1 pb-10 last:pb-0">
-        <p className="text-[11px] text-gray-600 uppercase tracking-[0.18em] font-semibold mb-2">
+        <p className="text-[11px] text-[var(--fg-muted)] uppercase tracking-[0.18em] font-semibold mb-2">
           {incident.label}
         </p>
-        <h3 className="text-xl font-bold text-white mb-2 leading-snug">{incident.title}</h3>
-        <p className="text-gray-500 text-sm leading-relaxed mb-5">{incident.body}</p>
+        <h3 className="text-xl font-bold text-[var(--fg)] mb-2 leading-snug">{incident.title}</h3>
+        <p className="text-[var(--fg-muted)] text-sm leading-relaxed mb-5">{incident.body}</p>
 
         {/* Budget bar */}
         <div className="space-y-1.5">
-          <div className="flex justify-between text-[11px] text-gray-600 font-mono">
+          <div className="flex justify-between text-[11px] text-[var(--fg-muted)] font-mono">
             <span>Budget consumed</span>
             <span style={{ color: incident.barColor }}>{incident.bar}%</span>
           </div>
-          <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+          <div className="h-1.5 rounded-full bg-[var(--border)] overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
               animate={inView ? { width: `${incident.bar}%` } : {}}
@@ -112,7 +112,7 @@ export default function Problem() {
         style={{ y }}
         className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
       >
-        <span className="text-[18vw] font-black text-white/[0.018] leading-none tracking-tighter whitespace-nowrap">
+        <span className="text-[18vw] font-black text-gray-900/[0.03] dark:text-white/[0.018] leading-none tracking-tighter whitespace-nowrap">
           THE COST
         </span>
       </motion.div>
@@ -139,7 +139,7 @@ export default function Problem() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl md:text-6xl font-black text-white leading-tight tracking-tight mb-6"
+              className="text-5xl md:text-6xl font-black text-[var(--fg)] leading-tight tracking-tight mb-6"
             >
               ₹8 crore project.
               <br />
@@ -149,7 +149,7 @@ export default function Problem() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-gray-500 text-lg leading-relaxed mb-10"
+              className="text-[var(--fg-muted)] text-lg leading-relaxed mb-10"
             >
               This is not a made-up scenario. This is what happens when real estate developers
               run projects without a single source of financial truth.
@@ -167,8 +167,8 @@ export default function Problem() {
                   <AlertCircle size={18} className="text-red-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white mb-1">The discovery moment</p>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="font-semibold text-[var(--fg)] mb-1">The discovery moment</p>
+                  <p className="text-[var(--fg-muted)] text-sm leading-relaxed">
                     He&apos;s spent ₹6.2 Cr but is only 55% complete. He needed to know this in month 3,
                     not month 7. XSITE makes the discovery happen before it&apos;s a crisis.
                   </p>
@@ -199,7 +199,7 @@ export default function Problem() {
             <p className="text-violet-300 font-bold text-xl mb-2">
               XSITE makes this visible in real time.
             </p>
-            <p className="text-gray-500 leading-relaxed">
+            <p className="text-[var(--fg-muted)] leading-relaxed">
               Every contractor invoice, material cost, and milestone payment — tracked against your
               approved budget, automatically. Section-wise. Day-wise. Always.
             </p>

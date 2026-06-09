@@ -11,13 +11,14 @@ const XIcon = () => (
   </svg>
 );
 
+/* Panels always keep dark backgrounds because photos need a dark surface to blend correctly */
 const members = [
   {
     imageSrc: "/founders/founder1.png",
     imagePosition: "center 20%",
     blendMode: "luminosity" as const,
     number: "01",
-    name: "Mahesh Giri",
+    name: "Mahessh Giri",
     role: "Co-founder & CEO",
     bio: "The one who looked at a ₹8 Cr real estate project bleeding money in silence and said — there has to be a better way. Obsessive about precision and outcomes, not activity. Built XSITE from a problem he watched unfold firsthand, not from a pitch deck.",
     tags: ["Product", "Vision", "Real Estate"],
@@ -58,14 +59,15 @@ function Panel({
     <motion.div
       onMouseEnter={() => setHovered(index)}
       onMouseLeave={() => setHovered(null)}
+      onClick={() => setHovered(hovered === index ? null : index)}
       animate={{ flexGrow: isHovered ? 1.55 : isOther ? 0.55 : 1 }}
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-      className="relative overflow-hidden cursor-default"
+      className="relative overflow-hidden cursor-pointer"
       style={{
         flexBasis: 0,
         minWidth: "26%",
         background: member.bgGradient,
-        minHeight: "clamp(580px, 78vh, 780px)",
+        minHeight: "clamp(480px, 78vh, 780px)",
       }}
     >
       {/* Photo — scale zoom in place */}
@@ -142,7 +144,7 @@ function Panel({
 
       {/* Content */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 px-10 pb-12"
+        className="absolute bottom-0 left-0 right-0 px-6 sm:px-10 pb-8 sm:pb-12"
         animate={{ y: isHovered ? -20 : 0 }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       >
@@ -164,7 +166,7 @@ function Panel({
         {/* Name */}
         <h3
           className="font-black text-white leading-[0.92] tracking-tight mb-5"
-          style={{ fontSize: "clamp(2.6rem, 4.5vw, 4.2rem)" }}
+          style={{ fontSize: "clamp(2rem, 4.5vw, 4.2rem)" }}
         >
           {member.name}
         </h3>
@@ -256,7 +258,7 @@ export default function Team() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white"
+          className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-[var(--fg)]"
         >
           Small team.{" "}
           <span className="gradient-text">Serious intent.</span>
@@ -265,9 +267,11 @@ export default function Team() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="text-gray-500 text-sm mt-4"
+          className="text-[var(--fg-muted)] text-sm mt-4"
         >
-          Hover to know us.
+          <span className="hidden lg:inline">Hover</span>
+          <span className="lg:hidden">Tap</span>
+          {" "}to know us.
         </motion.p>
       </div>
 
@@ -275,7 +279,7 @@ export default function Team() {
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-        className="flex flex-col lg:flex-row w-full border-y border-[#1F1F35] overflow-hidden"
+        className="flex flex-col lg:flex-row w-full border-y border-[var(--border)] overflow-hidden"
       >
         {members.map((m, i) => (
           <Panel key={m.name} member={m} index={i} hovered={hovered} setHovered={setHovered} />
