@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-// @ts-ignore: global CSS import declaration may be missing in this TS setup
 import "./globals.css";
 import { LayerProvider } from "@/context/LayerContext";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
