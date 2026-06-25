@@ -11,6 +11,7 @@ const navItems = [
   { name: "About", link: "/#about" },
   { name: "XSITE", link: "/xsite" },
   { name: "JEMS", link: "/jems" },
+  { name: "Cosmos", link: "https://cosmos.exponentor.com/" },
   { name: "Team", link: "/#team" },
 ];
 
@@ -64,17 +65,22 @@ export default function Navbar() {
             className="fixed top-[72px] left-1/2 -translate-x-1/2 z-[9998] w-[calc(100%-2rem)] max-w-3xl rounded-2xl
              bg-[var(--bg-card)] backdrop-blur-2xl border border-[var(--border)] overflow-hidden shadow-2xl"
           >
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.link}
-                onClick={() => setOpen(false)}
-                className="flex items-center px-5 py-3.5 text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--bg-deep)] transition-colors
-                 duration-150 text-sm border-b border-[var(--border)] last:border-0"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isExternal = item.link.startsWith("http");
+              return (
+                <Link
+                  key={item.name}
+                  href={item.link}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  onClick={() => setOpen(false)}
+                  className="flex items-center px-5 py-3.5 text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--bg-deep)] transition-colors
+                   duration-150 text-sm border-b border-[var(--border)] last:border-0"
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
             <div className="p-3">
               <Link
                 href="/#contact"

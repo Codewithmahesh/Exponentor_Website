@@ -65,22 +65,27 @@ export const FloatingNav = ({
 
           {/* nav links — absolutely centered */}
           <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-1">
-            {navItems.map((item, idx) => (
-              <a
-                key={idx}
-                href={item.link}
-                className="group relative px-3.5 py-1.5 rounded-full text-sm
-                  text-gray-600 dark:text-gray-400
-                  hover:text-gray-900 dark:hover:text-white
-                  transition-colors duration-200"
-              >
-                {item.icon && <span className="block sm:hidden">{item.icon}</span>}
-                <span className="hidden sm:block relative">
-                  {item.name}
-                  <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-violet-400 transition-transform duration-300 group-hover:scale-x-100" />
-                </span>
-              </a>
-            ))}
+            {navItems.map((item, idx) => {
+              const isExternal = item.link.startsWith("http");
+              return (
+                <a
+                  key={idx}
+                  href={item.link}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  className="group relative px-3.5 py-1.5 rounded-full text-sm
+                    text-gray-600 dark:text-gray-400
+                    hover:text-gray-900 dark:hover:text-white
+                    transition-colors duration-200"
+                >
+                  {item.icon && <span className="block sm:hidden">{item.icon}</span>}
+                  <span className="hidden sm:block relative">
+                    {item.name}
+                    <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-violet-400 transition-transform duration-300 group-hover:scale-x-100" />
+                  </span>
+                </a>
+              );
+            })}
           </div>
 
           {/* cta */}
