@@ -1,122 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useEffect } from "react";
 import { ArrowLeft, CheckCircle2, Zap, Circle, BarChart3, Users, Globe } from "lucide-react";
-import { motion, useAnimationFrame } from "framer-motion";
+import { motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
 import Navbar from "@/components/Navbar";
 
 /* ═══════════════════════════════════════════════════════
-   SPARKLE FIELD — pre-positioned ✦ glyphs
-═══════════════════════════════════════════════════════ */
-const SPARKLES = [
-  { x: "7%",  y: "13%", delay: 0,    d: 2.8, size: 14 },
-  { x: "89%", y: "9%",  delay: 0.7,  d: 2.3, size: 12 },
-  { x: "22%", y: "71%", delay: 1.2,  d: 3.1, size: 10 },
-  { x: "76%", y: "57%", delay: 0.3,  d: 2.5, size: 16 },
-  { x: "47%", y: "83%", delay: 1.8,  d: 2.0, size: 10 },
-  { x: "13%", y: "43%", delay: 2.1,  d: 2.7, size: 8  },
-  { x: "92%", y: "74%", delay: 0.9,  d: 3.3, size: 12 },
-  { x: "39%", y: "21%", delay: 1.5,  d: 2.4, size: 10 },
-  { x: "63%", y: "37%", delay: 0.4,  d: 2.9, size: 14 },
-  { x: "28%", y: "89%", delay: 2.4,  d: 2.1, size: 8  },
-  { x: "70%", y: "16%", delay: 1.1,  d: 3.0, size: 12 },
-  { x: "5%",  y: "58%", delay: 0.6,  d: 2.6, size: 10 },
-  { x: "54%", y: "47%", delay: 1.7,  d: 2.2, size: 8  },
-  { x: "32%", y: "7%",  delay: 2.9,  d: 2.7, size: 10 },
-  { x: "83%", y: "46%", delay: 0.2,  d: 3.5, size: 8  },
-];
-
-function SparkleField() {
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
-      {SPARKLES.map((s, i) => (
-        <motion.span
-          key={i}
-          className="absolute text-violet-400"
-          style={{ left: s.x, top: s.y, fontSize: s.size }}
-          initial={{ opacity: 0, scale: 0.2, rotate: 0 }}
-          animate={{
-            opacity: [0, 0.85, 0],
-            scale: [0.2, 1.3, 0.2],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: s.d,
-            delay: s.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          ✦
-        </motion.span>
-      ))}
-    </div>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════
-   CURSOR GLOW — soft radial that follows the mouse
-═══════════════════════════════════════════════════════ */
-function CursorGlow() {
-  const glowRef = useRef<HTMLDivElement>(null);
-  const mouseRef = useRef({ x: -999, y: -999 });
-
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      mouseRef.current = { x: e.clientX, y: e.clientY };
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, []);
-
-  useAnimationFrame(() => {
-    if (glowRef.current) {
-      glowRef.current.style.transform = `translate(${mouseRef.current.x - 220}px, ${mouseRef.current.y - 220}px)`;
-    }
-  });
-
-  return (
-    <div
-      ref={glowRef}
-      className="fixed top-0 left-0 w-[440px] h-[440px] rounded-full pointer-events-none z-0"
-      style={{
-        background:
-          "radial-gradient(circle, rgba(139,92,246,0.13) 0%, rgba(124,58,237,0.06) 45%, transparent 70%)",
-        willChange: "transform",
-      }}
-    />
-  );
-}
-
-/* ═══════════════════════════════════════════════════════
-   ANIMATED FLOATING ORBS
-═══════════════════════════════════════════════════════ */
-function FloatingOrbs() {
-  return (
-    <>
-      <motion.div
-        className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-violet-700/10 blur-[130px] pointer-events-none"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.9, 0.5] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-1/5 w-[380px] h-[380px] rounded-full bg-purple-600/8 blur-[110px] pointer-events-none"
-        animate={{ scale: [1.1, 1, 1.1], opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-      <motion.div
-        className="absolute top-2/3 left-1/2 w-[300px] h-[300px] rounded-full bg-indigo-500/6 blur-[90px] pointer-events-none"
-        animate={{ scale: [1, 1.2, 1], x: [0, 30, 0], opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-      />
-    </>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════
-   SHINE CARD — card with shimmer sweep on hover
+   SHINE CARD — simple bordered card
 ═══════════════════════════════════════════════════════ */
 function ShineCard({
   children,
@@ -126,28 +17,11 @@ function ShineCard({
   className?: string;
 }) {
   return (
-    <motion.div
-      className={`relative overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 md:p-8 group ${className}`}
-      whileHover="hover"
+    <div
+      className={`rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-6 md:p-8 hover:border-violet-500/30 transition-colors duration-300 ${className}`}
     >
       {children}
-      {/* Shine sweep */}
-      <motion.div
-        variants={{
-          hover: { x: ["−150%", "250%"], opacity: [0, 0.6, 0] },
-        }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none"
-      />
-      {/* Glow border on hover */}
-      <motion.div
-        variants={{ hover: { opacity: 1 } }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
-        className="absolute inset-0 rounded-2xl pointer-events-none"
-        style={{ boxShadow: "inset 0 0 0 1px rgba(139,92,246,0.35)" }}
-      />
-    </motion.div>
+    </div>
   );
 }
 
@@ -162,10 +36,10 @@ function Tag({
   color?: "violet" | "amber" | "green" | "red" | "gray";
 }) {
   const styles = {
-    violet: "border-violet-500/30 bg-violet-500/10 text-violet-400",
-    amber:  "border-amber-500/30 bg-amber-500/10 text-amber-400",
-    green:  "border-green-500/30 bg-green-500/10 text-green-400",
-    red:    "border-red-500/30 bg-red-500/10 text-red-400",
+    violet: "border-violet-500/30 bg-violet-500/10 text-violet-600",
+    amber:  "border-amber-500/30 bg-amber-500/10 text-amber-700",
+    green:  "border-green-500/30 bg-green-500/10 text-green-700",
+    red:    "border-red-500/30 bg-red-500/10 text-red-600",
     gray:   "border-[var(--border)] bg-[var(--bg-2)] text-[var(--fg-muted)]",
   };
   return (
@@ -180,7 +54,7 @@ function Tag({
 function Bullet({
   children,
   icon: Icon = CheckCircle2,
-  iconClass = "text-violet-400",
+  iconClass = "text-violet-600",
 }: {
   children: React.ReactNode;
   icon?: React.ElementType;
@@ -207,7 +81,7 @@ const timelineData = [
           <h2 className="mt-4 text-2xl md:text-3xl font-black text-[var(--fg)] leading-tight">
             A ₹8 Cr project.
             <br />
-            <span className="text-red-400">A silent bleed.</span>
+            <span className="text-red-600">A silent bleed.</span>
           </h2>
           <p className="mt-4 text-[var(--fg-muted)] leading-relaxed">
            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta assumenda amet
@@ -222,14 +96,14 @@ const timelineData = [
         </div>
 
         <ShineCard>
-          <p className="text-xs text-red-400 font-semibold uppercase tracking-wider mb-4">
+          <p className="text-xs text-red-600 font-semibold uppercase tracking-wider mb-4">
             The exact crisis
           </p>
           <div className="grid grid-cols-3 gap-4 mb-5">
             {[
               { label: "Total Budget", value: "₹8 Cr",   color: "text-[var(--fg)]" },
-              { label: "Already Spent", value: "₹6.2 Cr", color: "text-red-400" },
-              { label: "Work Done",    value: "55%",      color: "text-amber-400" },
+              { label: "Already Spent", value: "₹6.2 Cr", color: "text-red-600" },
+              { label: "Work Done",    value: "55%",      color: "text-amber-700" },
             ].map((s) => (
               <div key={s.label} className="text-center p-3 rounded-xl bg-[var(--bg-2)]">
                 <p className="text-[10px] text-[var(--fg-muted)] mb-1">{s.label}</p>
@@ -240,7 +114,7 @@ const timelineData = [
           <div className="space-y-1.5">
             <div className="flex justify-between text-[11px] text-[var(--fg-muted)]">
               <span>Budget consumed</span>
-              <span className="text-red-400 font-semibold">77.5%</span>
+              <span className="text-red-600 font-semibold">77.5%</span>
             </div>
             <div className="h-2 rounded-full bg-[var(--border)] overflow-hidden">
               <motion.div
@@ -251,7 +125,7 @@ const timelineData = [
                 transition={{ duration: 1.4, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               />
             </div>
-            <p className="text-[10px] text-red-400 mt-1">
+            <p className="text-[10px] text-red-600 mt-1">
               77.5% of budget gone — only 55% of work done. Discovered in month 7.
             </p>
           </div>
@@ -268,7 +142,7 @@ const timelineData = [
               "Cut scope, cut quality, cut reputation",
             ].map((opt) => (
               <li key={opt} className="flex items-center gap-3 text-sm text-[var(--fg-muted)]">
-                <span className="font-bold text-red-400">→</span>
+                <span className="font-bold text-red-600">→</span>
                 {opt}
               </li>
             ))}
@@ -301,7 +175,7 @@ const timelineData = [
         </div>
 
         <ShineCard>
-          <p className="text-xs text-violet-400 font-semibold uppercase tracking-wider mb-4">
+          <p className="text-xs text-violet-600 font-semibold uppercase tracking-wider mb-4">
             The founding belief
           </p>
           <blockquote className="text-lg md:text-xl font-black text-[var(--fg)] leading-snug">
@@ -318,14 +192,14 @@ const timelineData = [
               title: "Mahessh Giri",
               role: "Co-founder & CEO",
               color: "border-violet-500/20 bg-violet-500/5",
-              tag: "text-violet-400",
+              tag: "text-violet-600",
               desc: "Obsessive about precision and outcomes, not activity. Turned a firsthand problem into product conviction.",
             },
             {
               title: "Rushikesh Shrimanwar",
               role: "Co-founder & CTO",
               color: "border-amber-500/20 bg-amber-500/5",
-              tag: "text-amber-400",
+              tag: "text-amber-700",
               desc: "Ships things that shouldn't be possible in the time it takes others to write a brief.",
             },
           ].map((f) => (
@@ -356,7 +230,7 @@ const timelineData = [
           <h2 className="mt-4 text-2xl md:text-3xl font-black text-[var(--fg)] leading-tight">
             XSITE: built in silence.
             <br />
-            <span className="text-violet-400">Shipped with conviction.</span>
+            <span className="text-violet-600">Shipped with conviction.</span>
           </h2>
           <p className="mt-4 text-[var(--fg-muted)] leading-relaxed">
             No funding rounds. No press. No launch parties. Just two people who understood the problem
@@ -367,11 +241,11 @@ const timelineData = [
         <ShineCard>
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-xl bg-violet-600/15 flex items-center justify-center">
-              <BarChart3 size={18} className="text-violet-400" />
+              <BarChart3 size={18} className="text-violet-600" />
             </div>
             <div>
               <p className="font-black text-[var(--fg)]">XSITE</p>
-              <p className="text-xs text-violet-400">Real Estate Cost Intelligence</p>
+              <p className="text-xs text-violet-600">Real Estate Cost Intelligence</p>
             </div>
           </div>
           <ul className="space-y-3">
@@ -426,7 +300,7 @@ const timelineData = [
           <h2 className="mt-4 text-2xl md:text-3xl font-black text-[var(--fg)] leading-tight">
             XSITE goes live.
             <br />
-            <span className="text-green-400">Real projects. Real money.</span>
+            <span className="text-green-700">Real projects. Real money.</span>
           </h2>
           <p className="mt-4 text-[var(--fg-muted)] leading-relaxed">
             Not a beta. Not a waitlist. Live tracking of crores of rupees across active construction
@@ -435,7 +309,7 @@ const timelineData = [
         </div>
 
         <ShineCard>
-          <p className="text-xs text-green-400 font-semibold uppercase tracking-wider mb-5">
+          <p className="text-xs text-green-700 font-semibold uppercase tracking-wider mb-5">
             What XSITE does today
           </p>
           <div className="grid grid-cols-2 gap-4 mb-5">
@@ -476,7 +350,7 @@ const timelineData = [
               "No outside money means every decision is made to build something real.",
               "The best validation isn't a survey — it's a developer tracking crores on your platform.",
             ].map((p) => (
-              <Bullet key={p} icon={CheckCircle2} iconClass="text-green-400">
+              <Bullet key={p} icon={CheckCircle2} iconClass="text-green-700">
                 {p}
               </Bullet>
             ))}
@@ -495,7 +369,7 @@ const timelineData = [
           <h2 className="mt-4 text-2xl md:text-3xl font-black text-[var(--fg)] leading-tight">
             The next expensive problem:
             <br />
-            <span className="text-amber-400">hiring the wrong person.</span>
+            <span className="text-amber-700">hiring the wrong person.</span>
           </h2>
           <p className="mt-4 text-[var(--fg-muted)] leading-relaxed">
             Students graduating without knowing what industry actually needs. Companies burning months
@@ -509,11 +383,11 @@ const timelineData = [
         <ShineCard>
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center">
-              <Users size={18} className="text-amber-400" />
+              <Users size={18} className="text-amber-700" />
             </div>
             <div>
               <p className="font-black text-[var(--fg)]">JEMS</p>
-              <p className="text-xs text-amber-400">Student × Industry Trust Platform</p>
+              <p className="text-xs text-amber-700">Student × Industry Trust Platform</p>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
@@ -536,12 +410,12 @@ const timelineData = [
               },
             ].map((g) => (
               <div key={g.side} className="p-4 rounded-xl bg-[var(--bg-2)]">
-                <p className="text-xs font-semibold text-amber-400 uppercase tracking-wider mb-3">
+                <p className="text-xs font-semibold text-amber-700 uppercase tracking-wider mb-3">
                   {g.side}
                 </p>
                 <ul className="space-y-2">
                   {g.items.map((item) => (
-                    <Bullet key={item} icon={Zap} iconClass="text-amber-400">
+                    <Bullet key={item} icon={Zap} iconClass="text-amber-700">
                       {item}
                     </Bullet>
                   ))}
@@ -551,7 +425,7 @@ const timelineData = [
           </div>
           <Link
             href="/jems"
-            className="block w-full py-3 rounded-xl border border-amber-500/35 text-amber-400 hover:bg-amber-500/10 text-sm font-semibold text-center transition-all duration-200"
+            className="block w-full py-3 rounded-xl border border-amber-500/35 text-amber-700 hover:bg-amber-500/10 text-sm font-semibold text-center transition-all duration-200"
           >
             Join the JEMS waitlist →
           </Link>
@@ -581,7 +455,7 @@ const timelineData = [
         <ShineCard>
           <div className="flex items-center gap-3 mb-5">
             <div className="w-10 h-10 rounded-xl bg-indigo-500/15 flex items-center justify-center">
-              <Globe size={18} className="text-indigo-400" />
+              <Globe size={18} className="text-indigo-600" />
             </div>
             <p className="font-black text-[var(--fg)]">Platform Expansion</p>
           </div>
@@ -625,8 +499,6 @@ const timelineData = [
 export default function JourneyPage() {
   return (
     <>
-      <CursorGlow />
-
       <div
         className="relative min-h-screen overflow-x-hidden"
         style={{
@@ -638,57 +510,28 @@ export default function JourneyPage() {
 
         {/* ── Hero ─────────────────────────────────────── */}
         <section className="relative overflow-hidden">
-          {/* Sparkles confined to the hero */}
-          <SparkleField />
-          <FloatingOrbs />
-
-          {/* Animated grid */}
-          <motion.div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(167,139,250,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(167,139,250,0.06) 1px, transparent 1px)",
-              backgroundSize: "56px 56px",
-            }}
-            animate={{ backgroundPosition: ["0px 0px", "56px 56px"] }}
-            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-          />
-
           <div className="relative z-10 max-w-5xl mx-auto px-6 pt-40 pb-24 text-center">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-400 text-xs font-semibold mb-8 uppercase tracking-wider">
-                <motion.span
-                  className="w-1.5 h-1.5 rounded-full bg-violet-400"
-                  animate={{ opacity: [1, 0.2, 1] }}
-                  transition={{ duration: 1.6, repeat: Infinity }}
-                />
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-600 text-xs font-semibold mb-8 uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-violet-600" />
                 The story so far
               </span>
             </motion.div>
 
-            {/* Headline with shimmer sweep */}
-            <div className="relative inline-block overflow-hidden">
-              <motion.h1
-                initial={{ opacity: 0, y: 32 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-[var(--fg)] leading-[1.05] mb-0"
-              >
-                From one problem
-                <br />
-                <span className="gradient-text">to two products.</span>
-              </motion.h1>
-              {/* Shimmer sweep */}
-              <motion.div
-                className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none"
-                animate={{ x: ["-160%", "260%"] }}
-                transition={{ duration: 2.2, repeat: Infinity, repeatDelay: 5, ease: "easeInOut", delay: 1.5 }}
-              />
-            </div>
+            <motion.h1
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-[var(--fg)] leading-[1.05] mb-0"
+            >
+              From one problem
+              <br />
+              <span className="gradient-text">to two products.</span>
+            </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}

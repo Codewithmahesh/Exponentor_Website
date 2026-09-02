@@ -37,7 +37,7 @@ export default function Manifesto() {
           style={{ y: bgY }}
           className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
         >
-          <span className="text-[18vw] font-black text-gray-900/[0.03] dark:text-white/[0.018] leading-none tracking-tighter whitespace-nowrap">
+          <span className="text-[18vw] font-black text-gray-900/[0.03] leading-none tracking-tighter whitespace-nowrap">
             MANIFESTO
           </span>
         </motion.div>
@@ -49,7 +49,7 @@ export default function Manifesto() {
         />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center">
-          <p className="text-violet-400 text-xs font-semibold tracking-[0.25em] uppercase mb-8">
+          <p className="text-violet-600 text-xs font-semibold tracking-[0.25em] uppercase mb-8">
             Our belief
           </p>
 

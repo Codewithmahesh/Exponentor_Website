@@ -56,8 +56,8 @@ const milestones = [
 ];
 
 const statusConfig = {
-  live: { label: "Live", dot: "bg-green-400", text: "text-green-400", ring: "border-green-500/30 bg-green-500/8" },
-  building: { label: "Building", dot: "bg-amber-400 animate-pulse", text: "text-amber-400", ring: "border-amber-500/30 bg-amber-500/8" },
+  live: { label: "Live", dot: "bg-green-400", text: "text-green-700", ring: "border-green-500/30 bg-green-500/8" },
+  building: { label: "Building", dot: "bg-amber-400 animate-pulse", text: "text-amber-700", ring: "border-amber-500/30 bg-amber-500/8" },
   horizon: { label: "On the horizon", dot: "bg-gray-500", text: "text-gray-500", ring: "border-white/10 bg-white/4" },
 };
 
@@ -74,7 +74,7 @@ export default function Roadmap() {
         style={{ y }}
         className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
       >
-        <span className="text-[14vw] font-black text-gray-900/[0.03] dark:text-white/[0.018] leading-none tracking-tighter whitespace-nowrap">
+        <span className="text-[14vw] font-black text-gray-900/[0.03] leading-none tracking-tighter whitespace-nowrap">
           ROADMAP
         </span>
       </motion.div>
@@ -95,7 +95,7 @@ export default function Roadmap() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
-            className="text-violet-400 text-xs font-semibold tracking-[0.22em] uppercase mb-5"
+            className="text-violet-600 text-xs font-semibold tracking-[0.22em] uppercase mb-5"
           >
             Where we&apos;re going
           </motion.p>
@@ -168,13 +168,13 @@ export default function Roadmap() {
                   {m.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-3">
                       {m.status === "live" ? (
-                        <CheckCircle2 size={14} className="text-green-400 mt-0.5 shrink-0" />
+                        <CheckCircle2 size={14} className="text-green-700 mt-0.5 shrink-0" />
                       ) : m.status === "building" ? (
-                        <Zap size={14} className="text-amber-400 mt-0.5 shrink-0" />
+                        <Zap size={14} className="text-amber-700 mt-0.5 shrink-0" />
                       ) : (
-                        <Circle size={14} className="text-gray-400 dark:text-gray-700 mt-0.5 shrink-0" />
+                        <Circle size={14} className="text-gray-400 mt-0.5 shrink-0" />
                       )}
-                      <span className={`text-sm leading-snug ${m.status === "live" ? "text-[var(--fg-muted)]" : m.status === "building" ? "text-[var(--fg-muted)]" : "text-gray-400 dark:text-gray-700"}`}>
+                      <span className={`text-sm leading-snug ${m.status === "live" ? "text-[var(--fg-muted)]" : m.status === "building" ? "text-[var(--fg-muted)]" : "text-gray-400"}`}>
                         {item}
                       </span>
                     </li>

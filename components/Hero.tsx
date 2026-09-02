@@ -20,13 +20,10 @@ function MockDashboard() {
       transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="relative w-full max-w-[480px] ml-auto"
     >
-      {/* Ambient glow */}
-      <div className="absolute -inset-8 bg-violet-600/12 rounded-3xl blur-3xl pointer-events-none" />
-
       {/* Main window card */}
-      <div className="relative rounded-2xl border border-[#2A2A40] bg-[#0D0D1A] shadow-2xl overflow-hidden">
+      <div className="relative rounded-2xl border border-[#33334A] bg-[#1A1A26] shadow-xl overflow-hidden">
         {/* Titlebar */}
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-[#1A1A2E] bg-[#09090F]">
+        <div className="flex items-center gap-3 px-4 py-3 border-b border-[#2E2E40] bg-[#22222F]">
           <div className="flex gap-1.5">
             <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
             <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
@@ -59,7 +56,7 @@ function MockDashboard() {
               { label: "Spent", value: "₹6.2 Cr", color: "text-red-400" },
               { label: "Complete", value: "55%", color: "text-violet-400" },
             ].map((s) => (
-              <div key={s.label} className="p-3 rounded-xl bg-[#111122] border border-[#1F1F35]">
+              <div key={s.label} className="p-3 rounded-xl bg-[#22222F] border border-[#33334A]">
                 <p className="text-[10px] text-gray-600 mb-1">{s.label}</p>
                 <p className={`text-base font-black ${s.color}`}>{s.value}</p>
               </div>
@@ -72,7 +69,7 @@ function MockDashboard() {
               <span className="text-gray-600">Budget utilization</span>
               <span className="text-red-400 font-semibold">77.5% used — only 55% done</span>
             </div>
-            <div className="h-2 rounded-full bg-[#1F1F35] overflow-hidden">
+            <div className="h-2 rounded-full bg-[#2E2E40] overflow-hidden">
               <motion.div
                 className="h-full rounded-full bg-gradient-to-r from-violet-500 via-orange-400 to-red-500"
                 initial={{ width: "0%" }}
@@ -87,7 +84,7 @@ function MockDashboard() {
             {sections.map((s, i) => (
               <div key={s.name} className="flex items-center gap-3">
                 <span className="text-[11px] text-gray-600 w-20 shrink-0">{s.name}</span>
-                <div className="flex-1 h-1.5 rounded-full bg-[#1F1F35] overflow-hidden">
+                <div className="flex-1 h-1.5 rounded-full bg-[#2E2E40] overflow-hidden">
                   <motion.div
                     className={`h-full rounded-full ${s.over ? "bg-red-400" : "bg-violet-500"}`}
                     initial={{ width: "0%" }}
@@ -109,7 +106,7 @@ function MockDashboard() {
         initial={{ opacity: 0, x: 20, y: 10 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 0.8, delay: 1.4 }}
-        className="absolute -bottom-5 -left-8 w-44 rounded-xl border border-[#2A2A40] bg-[#0D0D1A]/95 backdrop-blur-sm p-3 shadow-xl"
+        className="absolute -bottom-5 -left-8 w-44 rounded-xl border border-[#33334A] bg-[#1A1A26]/95 backdrop-blur-sm p-3 shadow-xl"
       >
         <p className="text-[10px] text-gray-600 mb-1.5 uppercase tracking-wider">Reports</p>
         <div className="flex items-center gap-2">
@@ -130,22 +127,6 @@ export default function Hero() {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden px-6 pt-24 pb-16">
-      {/* Background blobs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-24 left-[8%] w-[420px] h-[420px] rounded-full bg-violet-600/8 blur-[120px]" />
-        <div className="absolute bottom-10 right-[5%] w-[340px] h-[340px] rounded-full bg-purple-900/10 blur-[100px]" />
-      </div>
-
-      {/* Grid */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.025]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#A78BFA 1px, transparent 1px), linear-gradient(90deg, #A78BFA 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
       <motion.div style={{ y, opacity }} className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* ── Left: Text ── */}
@@ -154,9 +135,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-400 text-xs font-semibold mb-7 uppercase tracking-wider"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-700 text-xs font-semibold mb-7 uppercase tracking-wider"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-600 animate-pulse" />
               SaaS built for the real world
             </motion.div>
 
@@ -190,7 +171,7 @@ export default function Hero() {
             >
               <a
                 href="#products"
-                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-all duration-200 hover:shadow-xl hover:shadow-violet-500/30 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-colors duration-200"
               >
                 See our products
                 <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-200" />

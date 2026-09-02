@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { name: "About", link: "/#about" },
@@ -28,21 +27,19 @@ export default function Navbar() {
 
   const Cta = (
     <>
-      <ThemeToggle />
-
       <Link href="/#contact">
         <motion.span
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className="block px-4 py-1.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold cursor-pointer
-          transition-colors duration-200 shadow-md shadow-violet-600/30 hover:shadow-violet-500/40"
+          transition-colors duration-200"
         >
           Let&apos;s talk
         </motion.span>
       </Link>
 
       <button
-        className="md:hidden w-8 h-8 rounded-full bg-white/[0.06] flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+        className="md:hidden w-8 h-8 rounded-full bg-[var(--bg-deep)] flex items-center justify-center text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors"
         onClick={() => setOpen((v) => !v)}
       >
         {open ? <X size={14} /> : <Menu size={14} />}
@@ -63,7 +60,7 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -8, scale: 0.97 }}
             transition={{ duration: 0.2 }}
             className="fixed top-[72px] left-1/2 -translate-x-1/2 z-[9998] w-[calc(100%-2rem)] max-w-3xl rounded-2xl
-             bg-[var(--bg-card)] backdrop-blur-2xl border border-[var(--border)] overflow-hidden shadow-2xl"
+             bg-[var(--bg-card)] backdrop-blur-xl border border-[var(--border)] overflow-hidden shadow-lg"
           >
             {navItems.map((item) => {
               const isExternal = item.link.startsWith("http");

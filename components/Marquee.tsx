@@ -33,14 +33,14 @@ export default function Marquee() {
           <div key={i} className="flex items-center">
             <span className={`text-xs font-semibold uppercase tracking-[0.18em] px-6 ${
               item === "XSITE"
-                ? "text-violet-400"
+                ? "text-violet-600"
                 : item === "JEMS"
-                ? "text-amber-400"
-                : "text-gray-400 dark:text-gray-700"
+                ? "text-amber-700"
+                : "text-gray-400"
             }`}>
               {item}
             </span>
-            <span className="text-gray-300 dark:text-[#1F1F35] text-xs">·</span>
+            <span className="text-gray-300 text-xs">·</span>
           </div>
         ))}
       </motion.div>

@@ -44,7 +44,7 @@ export default function XsitePage() {
 
       {/* Back nav */}
       <div className="px-8 pt-8 max-w-[1200px] mx-auto">
-        <Link href="/" className="inline-flex items-center gap-2 text-[var(--fg-muted)] hover:text-violet-400 text-sm transition-colors duration-200 group">
+        <Link href="/" className="inline-flex items-center gap-2 text-[var(--fg-muted)] hover:text-violet-600 text-sm transition-colors duration-200 group">
           <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform duration-200" />
           Back to Exponentor
         </Link>
@@ -53,7 +53,7 @@ export default function XsitePage() {
       {/* Hero */}
       <section className="px-5 sm:px-8 pt-16 sm:pt-20 pb-20 sm:pb-28 max-w-[1200px] mx-auto text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <Badge className="mb-6 border-green-500/30 bg-green-500/10 text-green-400 text-xs font-semibold px-3 py-1">
+          <Badge className="mb-6 border-green-500/30 bg-green-500/10 text-green-700 text-xs font-semibold px-3 py-1">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse mr-2 inline-block" />
             Live Product
           </Badge>
@@ -73,7 +73,7 @@ export default function XsitePage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25 }}
-          className="text-violet-400 text-xl font-semibold mb-6"
+          className="text-violet-600 text-xl font-semibold mb-6"
         >
           Real Estate Cost Intelligence
         </motion.p>
@@ -103,17 +103,17 @@ export default function XsitePage() {
         <Section>
           <div className="rounded-3xl border border-red-500/20 bg-red-500/5 overflow-hidden">
             <div className="flex items-center gap-3 px-8 py-5 border-b border-red-500/15">
-              <AlertTriangle size={16} className="text-red-400" />
-              <span className="text-red-400 text-sm font-semibold">The problem XSITE solves</span>
+              <AlertTriangle size={16} className="text-red-600" />
+              <span className="text-red-600 text-sm font-semibold">The problem XSITE solves</span>
             </div>
             <div className="p-8 md:p-12">
               <blockquote className="text-2xl md:text-3xl text-[var(--fg)] font-medium leading-snug mb-8 max-w-3xl">
                 &ldquo;A developer running a{" "}
-                <span className="text-red-400 font-black">₹8 Cr project</span>{" "}
+                <span className="text-red-600 font-black">₹8 Cr project</span>{" "}
                 discovers in month 7 that he&apos;s already spent{" "}
-                <span className="text-red-400 font-black">₹6.2 Cr</span>{" "}
+                <span className="text-red-600 font-black">₹6.2 Cr</span>{" "}
                 — but is only{" "}
-                <span className="text-red-400 font-black">55% complete.</span>&rdquo;
+                <span className="text-red-600 font-black">55% complete.</span>&rdquo;
               </blockquote>
               <p className="text-[var(--fg-muted)] text-base leading-relaxed max-w-2xl mb-6">
                 No one was tracking contractor invoices against milestones in real time. He now has
@@ -122,7 +122,7 @@ export default function XsitePage() {
               </p>
               <div className="flex flex-wrap gap-3">
                 {["Delayed project", "Emergency borrowing", "Quality compromise", "Reputation damage"].map(t => (
-                  <span key={t} className="px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-medium">{t}</span>
+                  <span key={t} className="px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/20 text-red-600 text-xs font-medium">{t}</span>
                 ))}
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function XsitePage() {
       {/* How it works */}
       <section id="how-it-works" className="px-8 py-24 max-w-[1200px] mx-auto">
         <Section className="text-center mb-16">
-          <p className="text-violet-400 text-xs font-semibold tracking-[0.2em] uppercase mb-4">How it works</p>
+          <p className="text-violet-600 text-xs font-semibold tracking-[0.2em] uppercase mb-4">How it works</p>
           <h2 className="text-4xl md:text-5xl font-black text-[var(--fg)] tracking-tight">
             Four steps to full control.
           </h2>
@@ -160,7 +160,7 @@ export default function XsitePage() {
       {/* Features */}
       <section className="px-8 py-24 max-w-[1200px] mx-auto">
         <Section className="text-center mb-16">
-          <p className="text-violet-400 text-xs font-semibold tracking-[0.2em] uppercase mb-4">Features</p>
+          <p className="text-violet-600 text-xs font-semibold tracking-[0.2em] uppercase mb-4">Features</p>
           <h2 className="text-4xl md:text-5xl font-black text-[var(--fg)] tracking-tight">
             Everything you need.
             <br /><span className="gradient-text">Nothing you don&apos;t.</span>
@@ -175,7 +175,7 @@ export default function XsitePage() {
                 className="h-full p-6 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)]"
               >
                 <div className="w-10 h-10 rounded-xl bg-violet-600/15 flex items-center justify-center mb-4">
-                  <f.icon size={18} className="text-violet-400" />
+                  <f.icon size={18} className="text-violet-600" />
                 </div>
                 <h3 className="font-bold text-[var(--fg)] mb-2 text-sm">{f.title}</h3>
                 <p className="text-[var(--fg-muted)] text-sm leading-relaxed">{f.desc}</p>

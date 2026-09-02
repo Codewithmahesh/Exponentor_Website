@@ -52,14 +52,10 @@ export const FloatingNav = ({
         )}
       >
         <div className="relative flex items-center justify-between px-3 py-2 rounded-full
-          border border-gray-200 dark:border-white/[0.08]
-          bg-white/85 dark:bg-[#09090F]/85
-          backdrop-blur-2xl
-          shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_8px_32px_rgba(0,0,0,0.08)]
-          dark:shadow-[0_0_0_1px_rgba(255,255,255,0.04),0_20px_60px_rgba(0,0,0,0.6)]">
-          {/* top glow line */}
-          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 -translate-y-px w-64 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
-
+          border border-[var(--border)]
+          bg-white/90
+          backdrop-blur-xl
+          shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_rgba(0,0,0,0.06)]">
           {/* logo */}
           {logo && <div className="flex items-center shrink-0">{logo}</div>}
 
@@ -74,8 +70,8 @@ export const FloatingNav = ({
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
                   className="group relative px-3.5 py-1.5 rounded-full text-sm
-                    text-gray-600 dark:text-gray-400
-                    hover:text-gray-900 dark:hover:text-white
+                    text-[var(--fg-muted)]
+                    hover:text-[var(--fg)]
                     transition-colors duration-200"
                 >
                   {item.icon && <span className="block sm:hidden">{item.icon}</span>}

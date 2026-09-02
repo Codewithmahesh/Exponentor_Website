@@ -44,7 +44,7 @@ export default function JemsPage() {
 
       {/* Back nav */}
       <div className="px-8 pt-8 max-w-[1200px] mx-auto">
-        <Link href="/" className="inline-flex items-center gap-2 text-[var(--fg-muted)] hover:text-amber-400 text-sm transition-colors duration-200 group">
+        <Link href="/" className="inline-flex items-center gap-2 text-[var(--fg-muted)] hover:text-amber-700 text-sm transition-colors duration-200 group">
           <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform duration-200" />
           Back to Exponentor
         </Link>
@@ -53,7 +53,7 @@ export default function JemsPage() {
       {/* Hero */}
       <section className="px-5 sm:px-8 pt-16 sm:pt-20 pb-20 sm:pb-28 max-w-[1200px] mx-auto text-center">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-          <Badge className="mb-6 border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs font-semibold px-3 py-1">
+          <Badge className="mb-6 border-amber-500/30 bg-amber-500/10 text-amber-700 text-xs font-semibold px-3 py-1">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse mr-2 inline-block" />
             In Development — Join the waitlist
           </Badge>
@@ -70,12 +70,12 @@ export default function JemsPage() {
         </motion.h1>
 
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }}
-          className="text-amber-400 text-xl font-semibold mb-3">
+          className="text-amber-700 text-xl font-semibold mb-3">
           Student × Industry Trust Platform
         </motion.p>
 
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.32 }}
-          className="text-amber-600 dark:text-amber-700 text-base italic mb-8">
+          className="text-amber-700 text-base italic mb-8">
           JEMS means trust.
         </motion.p>
 
@@ -114,7 +114,7 @@ export default function JemsPage() {
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
             className="flex flex-col items-center gap-3 max-w-md mx-auto">
             <div className="w-12 h-12 rounded-full bg-amber-500/15 flex items-center justify-center">
-              <CheckCircle2 size={24} className="text-amber-400" />
+              <CheckCircle2 size={24} className="text-amber-700" />
             </div>
             <p className="text-[var(--fg)] font-semibold">You&apos;re on the list!</p>
             <p className="text-[var(--fg-muted)] text-sm">We&apos;ll reach out to {email} when JEMS launches.</p>
@@ -126,22 +126,22 @@ export default function JemsPage() {
       <section className="px-8 py-24 max-w-[1200px] mx-auto">
         <Section>
           <div className="rounded-3xl border border-red-500/20 bg-red-500/5 p-8 md:p-12">
-            <p className="text-red-400 text-xs font-semibold uppercase tracking-wider mb-6">The gap we&apos;re closing</p>
+            <p className="text-red-600 text-xs font-semibold uppercase tracking-wider mb-6">The gap we&apos;re closing</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-bold text-[var(--fg)] mb-4">For students</h3>
                 <div className="space-y-3 text-[var(--fg-muted)] text-sm">
-                  <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Graduate without knowing industry benchmarks</div>
-                  <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>No credible way to prove job readiness</div>
-                  <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Interviews feel like a guessing game</div>
+                  <div className="flex gap-2"><span className="text-red-600 shrink-0 mt-0.5">→</span>Graduate without knowing industry benchmarks</div>
+                  <div className="flex gap-2"><span className="text-red-600 shrink-0 mt-0.5">→</span>No credible way to prove job readiness</div>
+                  <div className="flex gap-2"><span className="text-red-600 shrink-0 mt-0.5">→</span>Interviews feel like a guessing game</div>
                 </div>
               </div>
               <div>
                 <h3 className="text-xl font-bold text-[var(--fg)] mb-4">For companies</h3>
                 <div className="space-y-3 text-[var(--fg-muted)] text-sm">
-                  <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Spend months and lakhs on hires that don&apos;t stick</div>
-                  <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Resumes lie — no reliable signal of actual readiness</div>
-                  <div className="flex gap-2"><span className="text-red-400 shrink-0 mt-0.5">→</span>Hiring process is slow, expensive, and often wrong</div>
+                  <div className="flex gap-2"><span className="text-red-600 shrink-0 mt-0.5">→</span>Spend months and lakhs on hires that don&apos;t stick</div>
+                  <div className="flex gap-2"><span className="text-red-600 shrink-0 mt-0.5">→</span>Resumes lie — no reliable signal of actual readiness</div>
+                  <div className="flex gap-2"><span className="text-red-600 shrink-0 mt-0.5">→</span>Hiring process is slow, expensive, and often wrong</div>
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function JemsPage() {
       {/* For Students */}
       <section className="px-8 py-16 max-w-[1200px] mx-auto">
         <Section className="mb-12">
-          <p className="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">For Students</p>
+          <p className="text-amber-700 text-xs font-semibold uppercase tracking-wider mb-3">For Students</p>
           <h2 className="text-4xl md:text-5xl font-black text-[var(--fg)] tracking-tight">
             Know exactly where you stand.
           </h2>
@@ -163,7 +163,7 @@ export default function JemsPage() {
               <motion.div whileHover={{ y: -6, borderColor: "rgba(245,158,11,0.35)" }} transition={{ duration: 0.3 }}
                 className="h-full p-6 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)]">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center mb-4">
-                  <f.icon size={18} className="text-amber-400" />
+                  <f.icon size={18} className="text-amber-700" />
                 </div>
                 <h3 className="font-bold text-[var(--fg)] mb-2 text-sm">{f.title}</h3>
                 <p className="text-[var(--fg-muted)] text-sm leading-relaxed">{f.desc}</p>
@@ -176,7 +176,7 @@ export default function JemsPage() {
       {/* For Companies */}
       <section className="px-8 py-16 max-w-[1200px] mx-auto">
         <Section className="mb-12">
-          <p className="text-amber-400 text-xs font-semibold uppercase tracking-wider mb-3">For Companies</p>
+          <p className="text-amber-700 text-xs font-semibold uppercase tracking-wider mb-3">For Companies</p>
           <h2 className="text-4xl md:text-5xl font-black text-[var(--fg)] tracking-tight">
             Hire right. The first time.
           </h2>
@@ -187,7 +187,7 @@ export default function JemsPage() {
               <motion.div whileHover={{ y: -6, borderColor: "rgba(245,158,11,0.35)" }} transition={{ duration: 0.3 }}
                 className="h-full p-6 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)]">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/15 flex items-center justify-center mb-4">
-                  <f.icon size={18} className="text-amber-400" />
+                  <f.icon size={18} className="text-amber-700" />
                 </div>
                 <h3 className="font-bold text-[var(--fg)] mb-2 text-sm">{f.title}</h3>
                 <p className="text-[var(--fg-muted)] text-sm leading-relaxed">{f.desc}</p>
@@ -220,7 +220,7 @@ export default function JemsPage() {
                 </button>
               </form>
             ) : (
-              <p className="text-amber-400 font-semibold">You&apos;re on the list! We&apos;ll be in touch.</p>
+              <p className="text-amber-700 font-semibold">You&apos;re on the list! We&apos;ll be in touch.</p>
             )}
           </div>
         </Section>

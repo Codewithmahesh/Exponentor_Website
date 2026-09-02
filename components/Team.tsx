@@ -250,7 +250,7 @@ export default function Team() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
-          className="inline-block text-violet-400 text-xs font-semibold tracking-[0.22em] uppercase mb-4"
+          className="inline-block text-violet-600 text-xs font-semibold tracking-[0.22em] uppercase mb-4"
         >
           The team
         </motion.span>

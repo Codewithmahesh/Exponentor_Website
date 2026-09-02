@@ -22,11 +22,8 @@ function IntroLayer() {
           backgroundSize: "60px 60px",
         }}
       />
-      <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] rounded-full bg-violet-700/12 blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-amber-600/6 blur-[120px] pointer-events-none" />
-
       <div className="relative z-10 text-center max-w-4xl px-6">
-        <p className="text-violet-400 text-xs font-semibold tracking-[0.25em] uppercase mb-7">
+        <p className="text-violet-600 text-xs font-semibold tracking-[0.25em] uppercase mb-7">
           What we&apos;re building
         </p>
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-black text-[var(--fg)] leading-none tracking-tight mb-7">
@@ -38,18 +35,18 @@ function IntroLayer() {
           Each product is a precise fix for a specific, expensive problem. No bloat. No vague promises.
         </p>
         <div className="flex flex-wrap gap-3 justify-center mb-14">
-          <div className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-300 text-sm font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+          <div className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-violet-500/30 bg-violet-500/10 text-violet-700 text-sm font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-600" />
             XSITE — Real Estate
           </div>
-          <div className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-sm font-semibold">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+          <div className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-800 text-sm font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse" />
             JEMS — Education
           </div>
         </div>
         <Link
           href="/journey"
-          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-violet-500/30 bg-violet-500/10 hover:bg-violet-500/20 text-violet-300 hover:text-violet-200 text-sm font-semibold transition-all duration-200 group mb-12"
+          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-violet-500/30 bg-violet-500/10 hover:bg-violet-500/20 text-violet-700 hover:text-violet-800 text-sm font-semibold transition-all duration-200 group mb-12"
         >
           See how we got here
           <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-200" />
@@ -72,28 +69,18 @@ function XsiteLayer() {
       className="h-full flex items-center overflow-hidden relative"
       style={{ background: "radial-gradient(ellipse 80% 65% at 65% 35%, var(--grad-violet) 0%, var(--grad-violet-2) 55%, var(--bg) 100%)" }}
     >
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-violet-700/12 blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-purple-900/12 blur-[100px] pointer-events-none" />
       <div className="absolute top-5 left-1/2 -translate-x-1/2 w-10 h-1 rounded-full bg-[var(--border)]" />
 
       <div className="max-w-7xl mx-auto w-full px-8 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/25 bg-green-500/8 text-green-400 text-xs font-semibold mb-7 uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-green-500/25 bg-green-500/8 text-green-700 text-xs font-semibold mb-7 uppercase tracking-wider">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-600 animate-pulse" />
             Live Product
           </div>
-          <h2
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-2"
-            style={{
-              background: "linear-gradient(135deg, #fff 40%, #A78BFA)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-2 text-[var(--fg)]">
             XSITE
           </h2>
-          <p className="text-violet-400 text-base md:text-lg font-semibold mb-6">Real Estate Cost Intelligence</p>
+          <p className="text-violet-600 text-base md:text-lg font-semibold mb-6">Real Estate Cost Intelligence</p>
           <p className="text-[var(--fg-muted)] leading-relaxed mb-8 max-w-md text-[0.95rem]">
             Developers were discovering budget disasters in month 7 of a 12-month project — when it&apos;s
             already too late to fix. XSITE tracks every rupee against every milestone in real time, so you
@@ -118,9 +105,8 @@ function XsiteLayer() {
         </div>
 
         <div className="relative hidden lg:block">
-          <div className="absolute -inset-8 bg-violet-600/12 rounded-3xl blur-3xl" />
-          <div className="relative rounded-2xl border border-violet-500/20 bg-[#0A0A16]/90 shadow-2xl overflow-hidden">
-            <div className="flex items-center gap-2.5 px-4 py-3.5 border-b border-white/5 bg-black/20">
+          <div className="relative rounded-2xl border border-violet-500/20 bg-[#1A1A26]/95 shadow-xl overflow-hidden">
+            <div className="flex items-center gap-2.5 px-4 py-3.5 border-b border-white/5 bg-[#22222F]">
               <div className="flex gap-1.5">
                 {["#FF5F57", "#FFBD2E", "#28CA41"].map((c) => (
                   <div key={c} className="w-2.5 h-2.5 rounded-full" style={{ background: c }} />
@@ -191,29 +177,19 @@ function JemsLayer() {
       className="h-full flex items-center overflow-hidden relative"
       style={{ background: "radial-gradient(ellipse 70% 60% at 30% 40%, var(--grad-amber) 0%, var(--bg) 70%)" }}
     >
-      <div className="absolute top-0 left-0 w-[700px] h-[700px] rounded-full bg-amber-700/8 blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-orange-900/10 blur-[100px] pointer-events-none" />
       <div className="absolute top-5 left-1/2 -translate-x-1/2 w-10 h-1 rounded-full bg-[var(--border)]" />
 
       <div className="max-w-7xl mx-auto w-full px-8 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/25 bg-amber-500/10 text-amber-400 text-xs font-semibold mb-7 uppercase tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/25 bg-amber-500/10 text-amber-800 text-xs font-semibold mb-7 uppercase tracking-wider">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse" />
             In Development
           </div>
-          <h2
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-2"
-            style={{
-              background: "linear-gradient(135deg, #fff 40%, #FCD34D)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-2 text-[var(--fg)]">
             JEMS
           </h2>
-          <p className="text-amber-400 text-base md:text-lg font-semibold mb-1">Student × Industry Trust Platform</p>
-          <p className="text-amber-600 dark:text-amber-800 text-sm italic mb-6">JEMS means trust — and that&apos;s what we&apos;re building.</p>
+          <p className="text-amber-700 text-base md:text-lg font-semibold mb-1">Student × Industry Trust Platform</p>
+          <p className="text-amber-700 text-sm italic mb-6">JEMS means trust — and that&apos;s what we&apos;re building.</p>
           <p className="text-[var(--fg-muted)] leading-relaxed mb-8 max-w-md text-[0.95rem]">
             Students graduate without knowing what industry actually needs. Companies burn months and
             lakhs on mismatched hires. JEMS is the trust layer — readying students for real expectations,
@@ -225,21 +201,20 @@ function JemsLayer() {
               { icon: Briefcase, title: "For Companies", desc: "Verified, job-ready talent. Lower hiring cost. Faster decisions." },
             ].map((c) => (
               <div key={c.title} className="p-4 rounded-2xl border border-amber-500/15 bg-amber-500/5 hover:border-amber-500/30 transition-colors duration-300">
-                <c.icon size={16} className="text-amber-400 mb-2.5" />
+                <c.icon size={16} className="text-amber-700 mb-2.5" />
                 <p className="font-semibold text-[var(--fg)] text-sm mb-1">{c.title}</p>
                 <p className="text-[var(--fg-muted)] text-xs leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
-          <button className="px-7 py-3 rounded-full border border-amber-500/35 text-amber-400 hover:bg-amber-500/10 font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5">
+          <button className="px-7 py-3 rounded-full border border-amber-500/35 text-amber-700 hover:bg-amber-500/10 font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5">
             Join the waitlist →
           </button>
         </div>
 
         <div className="relative hidden lg:block">
-          <div className="absolute -inset-8 bg-amber-600/8 rounded-3xl blur-3xl" />
-          <div className="relative rounded-2xl border border-amber-500/15 bg-[#0D0905]/90 shadow-2xl overflow-hidden">
-            <div className="flex items-center gap-2.5 px-4 py-3.5 border-b border-white/5 bg-black/20">
+          <div className="relative rounded-2xl border border-amber-500/15 bg-[#241C12]/95 shadow-xl overflow-hidden">
+            <div className="flex items-center gap-2.5 px-4 py-3.5 border-b border-white/5 bg-[#2E2417]">
               <div className="flex gap-1.5">
                 {["#FF5F57", "#FFBD2E", "#28CA41"].map((c) => (
                   <div key={c} className="w-2.5 h-2.5 rounded-full" style={{ background: c }} />
@@ -342,7 +317,7 @@ export default function Products() {
 
         {/* Layer 1 — XSITE */}
         <motion.div
-          style={{ y: xsiteY, opacity: xsiteOpacity, boxShadow: "0 -20px 80px rgba(0,0,0,0.7)" }}
+          style={{ y: xsiteY, opacity: xsiteOpacity, boxShadow: "0 -12px 40px rgba(0,0,0,0.12)" }}
           className="absolute inset-0 rounded-t-[2rem] overflow-hidden will-change-transform"
         >
           <XsiteLayer />
@@ -350,7 +325,7 @@ export default function Products() {
 
         {/* Layer 2 — JEMS */}
         <motion.div
-          style={{ y: jemsY, boxShadow: "0 -20px 80px rgba(0,0,0,0.7)" }}
+          style={{ y: jemsY, boxShadow: "0 -12px 40px rgba(0,0,0,0.12)" }}
           className="absolute inset-0 rounded-t-[2rem] overflow-hidden will-change-transform"
         >
           <JemsLayer />

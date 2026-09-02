@@ -19,7 +19,7 @@ const incidents = [
     label: "Month 4–6",
     title: "Invoices pile up quietly.",
     body: "Contractors bill separately. Material costs are tracked in spreadsheets — if at all. No single source of truth exists.",
-    color: "text-amber-400",
+    color: "text-amber-700",
     bar: 55,
     barColor: "#f59e0b",
   },
@@ -28,7 +28,7 @@ const incidents = [
     label: "Month 7",
     title: "₹6.2 Cr spent. 55% done.",
     body: "The developer discovers the project is 55% complete but 77% of the budget is gone. Now he has to decide: delay, borrow, or cut quality.",
-    color: "text-red-400",
+    color: "text-red-600",
     bar: 77,
     barColor: "#ef4444",
   },
@@ -112,7 +112,7 @@ export default function Problem() {
         style={{ y }}
         className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
       >
-        <span className="text-[18vw] font-black text-gray-900/[0.03] dark:text-white/[0.018] leading-none tracking-tighter whitespace-nowrap">
+        <span className="text-[18vw] font-black text-gray-900/[0.03] leading-none tracking-tighter whitespace-nowrap">
           THE COST
         </span>
       </motion.div>
@@ -131,7 +131,7 @@ export default function Problem() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
-              className="text-red-400 text-xs font-semibold tracking-[0.22em] uppercase mb-6"
+              className="text-red-600 text-xs font-semibold tracking-[0.22em] uppercase mb-6"
             >
               The real problem
             </motion.p>
@@ -143,7 +143,7 @@ export default function Problem() {
             >
               ₹8 crore project.
               <br />
-              <span className="text-red-400">Month 7 crisis.</span>
+              <span className="text-red-600">Month 7 crisis.</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -164,7 +164,7 @@ export default function Problem() {
             >
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <AlertCircle size={18} className="text-red-400" />
+                  <AlertCircle size={18} className="text-red-600" />
                 </div>
                 <div>
                   <p className="font-semibold text-[var(--fg)] mb-1">The discovery moment</p>
@@ -196,7 +196,7 @@ export default function Problem() {
           className="mt-20 p-8 rounded-3xl border border-violet-500/15 bg-violet-500/5 flex flex-col md:flex-row items-center gap-8"
         >
           <div className="flex-1">
-            <p className="text-violet-300 font-bold text-xl mb-2">
+            <p className="text-violet-700 font-bold text-xl mb-2">
               XSITE makes this visible in real time.
             </p>
             <p className="text-[var(--fg-muted)] leading-relaxed">

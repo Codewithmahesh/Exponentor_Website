@@ -30,7 +30,6 @@ export default function Contact() {
   return (
     <section id="contact" ref={ref} className="py-32 px-6 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-violet-500/30 to-transparent" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-violet-700/8 blur-[100px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto" ref={ref}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -40,7 +39,7 @@ export default function Contact() {
             <motion.span
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
-              className="inline-block text-violet-400 text-xs font-semibold tracking-[0.22em] uppercase mb-6"
+              className="inline-block text-violet-600 text-xs font-semibold tracking-[0.22em] uppercase mb-6"
             >
               Get in touch
             </motion.span>
@@ -84,13 +83,13 @@ export default function Contact() {
                   className="group flex items-center gap-4 p-4 rounded-xl border border-[var(--border)] bg-[var(--bg-2)] hover:border-violet-500/35 transition-colors duration-300"
                 >
                   <div className="w-9 h-9 rounded-lg bg-violet-600/15 flex items-center justify-center group-hover:bg-violet-600/25 transition-colors duration-300 shrink-0">
-                    <c.icon size={16} className="text-violet-400" />
+                    <c.icon size={16} className="text-violet-600" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[11px] text-[var(--fg-muted)] uppercase tracking-wider mb-0.5">{c.label}</p>
                     <p className="text-[var(--fg)] text-sm font-medium truncate">{c.value}</p>
                   </div>
-                  <ArrowRight size={14} className="text-[var(--fg-muted)] group-hover:text-violet-400 group-hover:translate-x-1 transition-all duration-200 shrink-0" />
+                  <ArrowRight size={14} className="text-[var(--fg-muted)] group-hover:text-violet-600 group-hover:translate-x-1 transition-all duration-200 shrink-0" />
                 </motion.a>
               ))}
             </motion.div>
@@ -103,8 +102,6 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="absolute -inset-1 bg-gradient-to-br from-violet-600/10 via-transparent to-purple-600/10 rounded-3xl blur-xl pointer-events-none" />
-
             <div className="relative rounded-2xl border border-[var(--border-2)] bg-[var(--bg-card)] overflow-hidden">
               {/* Top bar */}
               <div className="h-1 bg-gradient-to-r from-violet-600 via-purple-500 to-violet-800" />
@@ -178,7 +175,7 @@ export default function Contact() {
                     className="py-12 flex flex-col items-center text-center gap-4"
                   >
                     <div className="w-14 h-14 rounded-full bg-green-500/15 flex items-center justify-center">
-                      <CheckCircle2 size={28} className="text-green-400" />
+                      <CheckCircle2 size={28} className="text-green-700" />
                     </div>
                     <h3 className="text-xl font-bold text-[var(--fg)]">Message sent!</h3>
                     <p className="text-[var(--fg-muted)] text-sm max-w-xs">
@@ -186,7 +183,7 @@ export default function Contact() {
                     </p>
                     <button
                       onClick={() => { setSent(false); setFields({ name: "", email: "", message: "" }); }}
-                      className="mt-2 text-violet-400 text-xs hover:text-violet-300 transition-colors"
+                      className="mt-2 text-violet-600 text-xs hover:text-violet-700 transition-colors"
                     >
                       Send another →
                     </button>

@@ -39,7 +39,7 @@ export default function About() {
         style={{ background: "radial-gradient(ellipse 60% 50% at 30% 40%, rgba(124,58,237,0.05) 0%, transparent 70%)" }} />
 
       {/* Faded giant label */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[22vw] font-black text-gray-900/[0.03] dark:text-white/[0.018] select-none pointer-events-none leading-none tracking-tight whitespace-nowrap">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[22vw] font-black text-gray-900/[0.03] select-none pointer-events-none leading-none tracking-tight whitespace-nowrap">
         ABOUT
       </div>
 
@@ -49,7 +49,7 @@ export default function About() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-violet-400 text-xs font-semibold tracking-[0.22em] uppercase mb-10"
+          className="text-violet-600 text-xs font-semibold tracking-[0.22em] uppercase mb-10"
         >
           Who we are
         </motion.p>
@@ -83,17 +83,14 @@ export default function About() {
 
             <div className="relative z-10 flex items-center gap-6 mt-10">
               <Link href="/xsite"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-400 hover:text-violet-300 transition-colors group">
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors group">
                 See XSITE <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
               <Link href="/jems"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-500 hover:text-amber-400 transition-colors group">
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-700 hover:text-amber-800 transition-colors group">
                 See JEMS <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
             </div>
-
-            {/* Corner glow */}
-            <div className="absolute -bottom-12 -right-12 w-48 h-48 rounded-full bg-violet-600/10 blur-2xl pointer-events-none" />
           </AnimatedBento>
 
           {/* CELL 2 — Stats card (4 cols, top right) */}

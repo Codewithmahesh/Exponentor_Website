@@ -133,7 +133,7 @@ export default function FAQ() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
-              className="text-violet-400 text-xs font-semibold tracking-[0.22em] uppercase mb-5"
+              className="text-violet-600 text-xs font-semibold tracking-[0.22em] uppercase mb-5"
             >
               Questions
             </motion.p>
@@ -167,7 +167,7 @@ export default function FAQ() {
               className="inline-flex items-center gap-2 text-sm text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors duration-200 group"
             >
               hello@exponentor.com
-              <span className="text-gray-400 dark:text-gray-700 group-hover:text-violet-400 transition-all duration-200 group-hover:translate-x-0.5 inline-block">
+              <span className="text-gray-400 group-hover:text-violet-600 transition-all duration-200 group-hover:translate-x-0.5 inline-block">
                 →
               </span>
             </motion.a>
